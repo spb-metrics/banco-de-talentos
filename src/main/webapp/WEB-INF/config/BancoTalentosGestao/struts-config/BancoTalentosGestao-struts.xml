@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+<form-beans>
+<form-bean name="consultaAtributoTalentoOpcao" type="br.gov.camara.visao.bancotalentosgestao.form.ConsultaAtributoTalentoOpcaoForm">
+</form-bean>
+<form-bean name="consultaEstatisticaCadastro" type="br.gov.camara.visao.bancotalentosgestao.form.ConsultaEstatisticaCadastroForm">
+</form-bean>
+<form-bean name="consultaTalento" type="br.gov.camara.visao.bancotalentosgestao.form.ConsultaTalentoForm">
+</form-bean>
+<form-bean name="detalheTalento" type="br.gov.camara.visao.bancotalentosgestao.form.DetalheTalentoForm">
+</form-bean>
+<form-bean name="listagemConsultaEstatistica" type="br.gov.camara.visao.bancotalentosgestao.form.ListagemConsultaEstatisticaForm">
+</form-bean>
+<form-bean name="resultadoConsultaTalento" type="br.gov.camara.visao.bancotalentosgestao.form.ResultadoConsultaTalentoForm">
+</form-bean>
+<form-bean name="talento" type="br.gov.camara.visao.bancotalentosgestao.form.TalentoForm">
+</form-bean>
+</form-beans>
+<global-exceptions>
+<exception key="sigesp.comum.erro.globalexception" type="java.lang.Exception" bundle="comum" path="/encaminharErro.do" scope="request" handler="sigesp.comum.util.exception.GlobalExceptionHandler"/>
+</global-exceptions>
+<global-forwards>
+<forward name="encaminharLogon" path="/encaminharLogon.do"/>
+<forward name="encaminharLogoff" path="/encaminharLogoff.do"/>
+<forward name="encaminharErro" path="/encaminharErro.do"/>
+<forward name="encaminharUsuarioNaoAutorizado" path="/encaminharUsuarioNaoAutorizado.do"/>
+</global-forwards>
+<action-mappings>
+<action path="/encaminharLogon" type="sigesp.comum.util.struts.actions.RedirAcao">
+<forward name="sucesso" path="/encaminharLogon.do" module="/Autenticacao" redirect="true"/>
+</action>
+<action path="/encaminharLogoff" type="sigesp.comum.util.struts.actions.RedirAcao">
+<forward name="sucesso" path="/encaminharLogoff.do" module="/Autenticacao" redirect="true"/>
+</action>
+<action path="/encaminharErro" forward="sigesp.comum.erro"/>
+<action path="/encaminharUsuarioNaoAutorizado" forward="sigesp.comum.usuarionaoautorizado"/>
+<action path="/encaminharAvisoJavaScript" forward="sigesp.comum.avisojavascript"/>
+<action path="/bancoTalentosGestaoInicioBancoTalentosGestaoCadastrar" forward="visao.bancotalentosgestao.bancotalentosgestaoiniciobancotalentosgestao"/>
+<action path="/bancoTalentosGestaoInicioBancoTalentosGestaoConsultar" forward="visao.bancotalentosgestao.bancotalentosgestaoiniciobancotalentosgestao"/>
+<action path="/consultaAtributoTalentoOpcaoPaginarListagem" forward="visao.bancotalentosgestao.consultaatributotalentoopcao"/>
+<action path="/indexBancoTalentosGestao" forward="visao.bancotalentosgestao.indexbancotalentosgestao"/>
+<action path="/resultadoConsultaTalentoPaginarListagem" forward="visao.bancotalentosgestao.resultadoconsultatalento"/>
+<action path="/avisarJavaScriptConsultaAtributoTalentoOpcao" type="sigesp.comum.util.struts.actions.RedirAcao" input="visao.bancotalentosgestao.consultaatributotalentoopcao" name="consultaAtributoTalentoOpcao" scope="request" validate="false">
+<forward name="sucesso" path="/encaminharAvisoJavaScript.do"/>
+</action>
+<action path="/avisarJavaScriptConsultaEstatisticaCadastro" type="sigesp.comum.util.struts.actions.RedirAcao" input="visao.bancotalentosgestao.consultaestatisticacadastro" name="consultaEstatisticaCadastro" scope="request" validate="false">
+<forward name="sucesso" path="/encaminharAvisoJavaScript.do"/>
+</action>
+<action path="/avisarJavaScriptConsultaTalento" type="sigesp.comum.util.struts.actions.RedirAcao" input="visao.bancotalentosgestao.consultatalento" name="consultaTalento" scope="request" validate="false">
+<forward name="sucesso" path="/encaminharAvisoJavaScript.do"/>
+</action>
+<action path="/avisarJavaScriptDetalheTalento" type="sigesp.comum.util.struts.actions.RedirAcao" input="visao.bancotalentosgestao.detalhetalento" name="detalheTalento" scope="request" validate="false">
+<forward name="sucesso" path="/encaminharAvisoJavaScript.do"/>
+</action>
+<action path="/avisarJavaScriptListagemConsultaEstatistica" type="sigesp.comum.util.struts.actions.RedirAcao" input="visao.bancotalentosgestao.listagemconsultaestatistica" name="listagemConsultaEstatistica" scope="request" validate="false">
+<forward name="sucesso" path="/encaminharAvisoJavaScript.do"/>
+</action>
+<action path="/avisarJavaScriptResultadoConsultaTalento" type="sigesp.comum.util.struts.actions.RedirAcao" input="visao.bancotalentosgestao.resultadoconsultatalento" name="resultadoConsultaTalento" scope="request" validate="false">
+<forward name="sucesso" path="/encaminharAvisoJavaScript.do"/>
+</action>
+<action path="/avisarJavaScriptTalento" type="sigesp.comum.util.struts.actions.RedirAcao" input="visao.bancotalentosgestao.talento" name="talento" scope="request" validate="false">
+<forward name="sucesso" path="/encaminharAvisoJavaScript.do"/>
+</action>
+<action path="/consultaAtributoTalentoOpcaoEfetuarConsulta" type="br.gov.camara.visao.bancotalentosgestao.action.ConsultaAtributoTalentoOpcaoAction" input="visao.bancotalentosgestao.consultaatributotalentoopcao" name="consultaAtributoTalentoOpcao" scope="request" validate="true" parameter="ConsultaAtributoTalentoOpcao">
+<forward name="sucesso" path="visao.bancotalentosgestao.consultaatributotalentoopcao"/>
+</action>
+<action path="/consultaAtributoTalentoOpcaoPrepararVisualizacao" type="br.gov.camara.visao.bancotalentosgestao.action.ConsultaAtributoTalentoOpcaoAction" input="/encaminharErro.do">
+<forward name="sucesso" path="visao.bancotalentosgestao.consultaatributotalentoopcao"/>
+</action>
+<action path="/consultaEstatisticaCadastroPrepararVisualizacao" type="br.gov.camara.visao.bancotalentosgestao.action.ConsultaEstatisticasCadastroAction" input="visao.bancotalentosgestao.indexbancotalentosgestao">
+<forward name="sucesso" path="visao.bancotalentosgestao.consultaestatisticacadastro"/>
+</action>
+<action path="/consultaTalentoAdicionarCriterio" type="br.gov.camara.visao.bancotalentosgestao.action.ConsultaTalentoAction" input="/consultaTalentoPrepararConsulta.do?limpar=false" name="consultaTalento" scope="request" validate="true" parameter="ConsultaTalento">
+<forward name="sucesso" path="/consultaTalentoPrepararConsulta.do?limpar=false"/>
+</action>
+<action path="/consultaTalentoBuscarHierarquia" type="br.gov.camara.visao.bancotalentosgestao.action.ConsultaTalentoAction" input="/consultaTalentoPrepararConsulta.do" name="consultaTalento" scope="request" validate="false" parameter="ConsultaTalento">
+<forward name="sucesso" path="/consultaTalentoBuscarOpcao.do"/>
+</action>
+<action path="/consultaTalentoBuscarOpcao" type="br.gov.camara.visao.bancotalentosgestao.action.ConsultaTalentoAction" input="/consultaTalentoPrepararConsulta.do?limpar=false" name="consultaTalento" scope="request" validate="false" parameter="ConsultaTalento">
+<forward name="sucesso" path="/consultaTalentoPrepararConsulta.do?limpar=false"/>
+</action>
+<action path="/consultaTalentoPrepararConsulta" type="br.gov.camara.visao.bancotalentosgestao.action.ConsultaTalentoAction" input="/consultaTalentoPrepararVisualizacao.do?limpar=false" name="consultaTalento" scope="request" validate="true" parameter="ConsultaTalento">
+<forward name="sucesso" path="/consultaTalentoPrepararVisualizacao.do?limpar=false"/>
+</action>
+<action path="/consultaTalentoPrepararVisualizacao" type="br.gov.camara.visao.bancotalentosgestao.action.ConsultaTalentoAction" input="visao.bancotalentosgestao.indexbancotalentosgestao">
+<forward name="sucesso" path="visao.bancotalentosgestao.consultatalento"/>
+</action>
+<action path="/consultaTalentoRemoverCriterio" type="br.gov.camara.visao.bancotalentosgestao.action.ConsultaTalentoAction" input="/consultaTalentoPrepararConsulta.do?limpar=false" name="consultaTalento" scope="request" validate="true" parameter="ConsultaTalento">
+<forward name="sucesso" path="/consultaTalentoPrepararConsulta.do?limpar=false"/>
+</action>
+<action path="/curriculoGerarRelatorio" type="br.gov.camara.visao.bancotalentosgestao.action.CurriculoAction" input="visao.bancotalentosgestao.curriculo"/>
+<action path="/curriculoPessoalPrepararVisualizacao" type="sigesp.comum.util.struts.actions.RedirAcao" input="visao.bancotalentosgestao.indexbancotalentosgestao">
+<forward name="sucesso" path="/curriculoPrepararVisualizacao.do"/>
+</action>
+<action path="/curriculoPrepararVisualizacao" type="br.gov.camara.visao.bancotalentosgestao.action.CurriculoAction" input="visao.bancotalentosgestao.curriculo">
+<forward name="sucesso" path="visao.bancotalentosgestao.curriculo"/>
+</action>
+<action path="/curriculoPrepararVisualizacaoConsulta" type="br.gov.camara.visao.bancotalentosgestao.action.CurriculoAction" input="visao.bancotalentosgestao.resultadoconsultatalento" name="resultadoConsultaTalento" scope="request" validate="false" parameter="ResultadoConsultaTalento">
+<forward name="sucesso" path="/curriculoPrepararVisualizacao.do"/>
+</action>
+<action path="/curriculoPrepararVisualizacaoEstatistica" type="br.gov.camara.visao.bancotalentosgestao.action.CurriculoAction" input="visao.bancotalentosgestao.listagemconsultaestatistica">
+<forward name="sucesso" path="/curriculoPrepararVisualizacao.do"/>
+</action>
+<action path="/detalheTalentoBuscarHierarquia" type="br.gov.camara.visao.bancotalentosgestao.action.TalentoAction" input="visao.bancotalentosgestao.detalhetalento" name="detalheTalento" scope="request" validate="false" parameter="DetalheTalento">
+<forward name="sucesso" path="/detalheTalentoBuscarOpcao.do"/>
+</action>
+<action path="/detalheTalentoBuscarOpcao" type="br.gov.camara.visao.bancotalentosgestao.action.TalentoAction" input="visao.bancotalentosgestao.detalhetalento" name="detalheTalento" scope="request" validate="false" parameter="DetalheTalento">
+<forward name="sucesso" path="/detalheTalentoPrepararInclusao.do"/>
+</action>
+<action path="/detalheTalentoEncaminharInclusao" type="sigesp.comum.util.struts.actions.RedirAcao" input="visao.bancotalentosgestao.encaminhamentotalento">
+<forward name="sucesso" path="/detalheTalentoPrepararInclusao.do"/>
+</action>
+<action path="/detalheTalentoPrepararAlteracao" type="br.gov.camara.visao.bancotalentosgestao.action.TalentoAction" input="visao.bancotalentosgestao.talento" name="detalheTalento" scope="request" validate="false" parameter="DetalheTalento">
+<forward name="sucesso" path="/detalheTalentoPrepararInclusao.do"/>
+</action>
+<action path="/detalheTalentoPrepararInclusao" type="br.gov.camara.visao.bancotalentosgestao.action.TalentoAction" input="visao.bancotalentosgestao.talento">
+<forward name="sucesso" path="visao.bancotalentosgestao.detalhetalento"/>
+</action>
+<action path="/encaminhamentoTalentoEfetuarInclusao" type="br.gov.camara.visao.bancotalentosgestao.action.TalentoAction" input="/detalheTalentoPrepararInclusao.do" name="detalheTalento" scope="request" validate="true" parameter="DetalheTalento">
+<forward name="sucesso" path="visao.bancotalentosgestao.encaminhamentotalento"/>
+</action>
+<action path="/exclusaoTalentoPrepararExclusao" type="br.gov.camara.visao.bancotalentosgestao.action.TalentoAction" input="visao.bancotalentosgestao.talento">
+<forward name="sucesso" path="visao.bancotalentosgestao.exclusaotalento"/>
+</action>
+<action path="/listagemConsultaEstatisticaEfetuarListagem" type="br.gov.camara.visao.bancotalentosgestao.action.ConsultaEstatisticasCadastroAction" input="/resultadoConsultaEstatisticaCadastroEfetuarConsulta.do" name="listagemConsultaEstatistica" scope="request" validate="false" parameter="ListagemConsultaEstatistica">
+<forward name="sucesso" path="visao.bancotalentosgestao.listagemconsultaestatistica"/>
+</action>
+<action path="/listagemConsultaEstatisticaGerarRelatorio" type="br.gov.camara.visao.bancotalentosgestao.action.ConsultaEstatisticasCadastroAction" input="/listagemConsultaEstatisticaEfetuarListagem.do" name="listagemConsultaEstatistica" scope="request" validate="false" parameter="ListagemConsultaEstatistica"/>
+<action path="/resultadoConsultaEstatisticaCadastroEfetuarConsulta" type="br.gov.camara.visao.bancotalentosgestao.action.ConsultaEstatisticasCadastroAction" input="/consultaEstatisticaCadastroPrepararVisualizacao.do" name="consultaEstatisticaCadastro" scope="request" validate="false" parameter="ConsultaEstatisticaCadastro">
+<forward name="sucesso" path="visao.bancotalentosgestao.resultadoconsultaestatisticacadastro"/>
+</action>
+<action path="/resultadoConsultaTalentoEfetuarConsulta" type="br.gov.camara.visao.bancotalentosgestao.action.ConsultaTalentoAction" input="/consultaTalentoPrepararVisualizacao.do?limpar=false" name="resultadoConsultaTalento" scope="request" validate="false" parameter="ResultadoConsultaTalento">
+<forward name="sucesso" path="visao.bancotalentosgestao.resultadoconsultatalento"/>
+</action>
+<action path="/resultadoConsultaTalentoGerarRelatorio" type="br.gov.camara.visao.bancotalentosgestao.action.ConsultaTalentoAction" input="/resultadoConsultaTalentoEfetuarConsulta.do" name="resultadoConsultaTalento" scope="request" validate="false" parameter="ResultadoConsultaTalento"/>
+<action path="/talentoEfetuarAlteracao" type="br.gov.camara.visao.bancotalentosgestao.action.TalentoAction" input="/detalheTalentoPrepararAlteracao.do" name="detalheTalento" scope="request" validate="true" parameter="DetalheTalento">
+<forward name="sucesso" path="/talentoPrepararVisualizacao.do"/>
+</action>
+<action path="/talentoEfetuarExclusao" type="br.gov.camara.visao.bancotalentosgestao.action.TalentoAction" input="/exclusaoTalentoPrepararExclusao.do">
+<forward name="sucesso" path="/talentoPrepararVisualizacao.do"/>
+</action>
+<action path="/talentoEfetuarFiltro" type="br.gov.camara.visao.bancotalentosgestao.action.TalentoAction" input="visao.bancotalentosgestao.talento" name="talento" scope="request" validate="true" parameter="Talento">
+<forward name="sucesso" path="visao.bancotalentosgestao.talento"/>
+</action>
+<action path="/talentoEncaminharInclusao" type="sigesp.comum.util.struts.actions.RedirAcao" input="visao.bancotalentosgestao.encaminhamentotalento">
+<forward name="sucesso" path="/talentoPrepararVisualizacao.do"/>
+</action>
+<action path="/talentoPrepararVisualizacao" type="br.gov.camara.visao.bancotalentosgestao.action.TalentoAction" input="visao.bancotalentosgestao.indexbancotalentosgestao">
+<forward name="sucesso" path="visao.bancotalentosgestao.talento"/>
+</action>
+</action-mappings>
+<controller processorClass="br.gov.camara.util.actionplugin.ActionPlugInTilesRequestProcessor"/>
+<message-resources parameter="resources.BancoTalentosGestao"/>
+<message-resources parameter="resources.Comum" key="comum"/>
+<plug-in className="br.gov.camara.util.actionplugin.ActionPlugInPlugIn">
+<set-property property="configFile" value="/WEB-INF/config/projeto/action-plug-in/action-plug-in-config.xml"/>
+<set-property property="configDTD" value="/WEB-INF/config/Comum/action-plug-in/action-plug-in-config_1_0.dtd"/>
+</plug-in>
+<plug-in className="org.apache.struts.tiles.TilesPlugin">
+<set-property property="definitions-parser-validate" value="true"/>
+<set-property property="moduleAware" value="true"/>
+<set-property property="definitions-config" value="/WEB-INF/config/Comum/tiles-defs/Comum-tiles.xml, /WEB-INF/config/BancoTalentosGestao/tiles-defs/BancoTalentosGestao-tiles.xml"/>
+</plug-in>
+<plug-in className="br.gov.camara.util.strutsmenu.MenuPlugInCD">
+<set-property property="menuConfig" value="/WEB-INF/config/BancoTalentosGestao/menu-config/BancoTalentosGestao-menu.xml"/>
+</plug-in>
+<plug-in className="br.gov.camara.util.aplicacao.AplicacaoPlugIn">
+<set-property property="arquivoConfiguracao" value="/WEB-INF/config/BancoTalentosGestao/aplicacao-config/BancoTalentosGestao-aplicacao.xml"/>
+</plug-in>
+<plug-in className="br.gov.camara.util.locale.LocalePlugIn">
+<set-property property="linguagem" value="pt"/>
+<set-property property="pais" value="BR"/>
+</plug-in>
+<plug-in className="sigesp.comum.util.hibernate.HibernatePlugIn"/>
+</struts-config>
+

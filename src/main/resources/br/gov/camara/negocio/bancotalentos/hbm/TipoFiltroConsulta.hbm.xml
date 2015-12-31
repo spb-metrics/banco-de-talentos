@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="br.gov.camara.negocio.bancotalentos.pojo.TipoFiltroConsulta" table="TIPOFILTROCONSULTA">
+		<id name="identificador" column="ideTipoFiltroConsulta" type="java.lang.Integer" >
+			<generator class="increment" />
+		</id>
+		<property name="nomeTipoFiltroConsulta" column="nomTipoFiltroConsulta" not-null="false" type="java.lang.String"/>
+		<property name="nomeObjetoControlado" column="nomObjetoControlado" not-null="false" type="java.lang.String"/>
+	</class>
+</hibernate-mapping>

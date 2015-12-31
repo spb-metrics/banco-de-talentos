@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="br.gov.camara.negocio.autenticacaoperfil.pojo.PerfilSistema" table="PERFILSISTEMA" lazy="true">
+		<id name="identificador" column="idePerfilSistema" type="java.lang.Integer" >
+			<generator class="increment" />
+		</id>
+		<property name="nome" column="nomPerfilSistema" not-null="true" type="java.lang.String"/>
+		<property name="descricao" column="desPerfilSistema" type="java.lang.String"/>
+		<property name="objetoControlado" column="nomObjetoControlado" not-null="true" type="java.lang.String"/>
+		<many-to-one name="sistema" class="br.gov.camara.negocio.autenticacaoperfil.pojo.Sistema" column="ideSistema" />
+        <many-to-one name="perfilAgrupador" class="br.gov.camara.negocio.autenticacaoperfil.pojo.PerfilSistema" column="idePerfilAgrupador" />
+		<set name="grupos" table="PerfilSistemaGrupo" lazy="true" order-by="codGrupo">
+        	<key column="idePerfilSistema"/>
+        	<many-to-many column="codGrupo" class="br.gov.camara.negocio.autenticacaoperfil.pojo.Grupo"/>
+    	</set>
+		<set name="funcionalidades" table="PerfilFuncionalidadeSistema" lazy="true">
+        	<key column="idePerfilSistema"/>
+        	<many-to-many column="ideFuncionalidadeSistema" class="br.gov.camara.negocio.autenticacaoperfil.pojo.FuncionalidadeSistema"/>
+    	</set>
+	
+		<!-- set name="usuarios" table="UsuarioPerfilSistema" lazy="true" order-by="codGrupo">
+        	<key column="idePerfilSistema"/>
+        	<many-to-many column="ideUsuario" class="br.gov.camara.negocio.autenticacaoperfil.pojo.UsuarioSistema"/>
+    	</set-->
+	</class>
+</hibernate-mapping>

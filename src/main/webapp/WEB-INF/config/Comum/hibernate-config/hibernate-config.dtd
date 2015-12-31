@@ -1,0 +1,10 @@
+<!ELEMENT persistencia-configuracao (configuracao+, modulo+)>
+
+<!ELEMENT configuracao (propriedade+) >
+<!ELEMENT modulo (propriedade+) >
+
+<!ELEMENT propriedade EMPTY> 
+<!ATTLIST propriedade local_arquivos_cfg CDATA #IMPLIED>
+<!ATTLIST propriedade arquivo_cfg CDATA #IMPLIED>
+<!ATTLIST propriedade nome_conexao CDATA #IMPLIED>
+<!ATTLIST propriedade ativo CDATA #IMPLIED>

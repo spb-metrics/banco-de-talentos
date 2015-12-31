@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+
+    <!-- Titulo da aplicação que ficará no Cabeçalho -->
+    <context-param>
+        <param-name>tituloAplicacao</param-name>
+        <param-value>Banco de Talentos</param-value>
+    </context-param>
+    <context-param>
+        <param-name>tituloOrgao</param-name>
+        <param-value>Informe o Órgão</param-value>
+    </context-param>
+    <context-param>
+        <param-name>tituloSubOrgao</param-name>
+        <param-value>informe o Sub Órgão</param-value>
+    </context-param>
+
+    <!-- URL para a qual o usuário logado será encaminhado -->
+    <context-param>
+        <param-name>URLInicialPosLogin</param-name>
+        <param-value>BancoTalentosGestao/indexBancoTalentosGestao.do</param-value>
+    </context-param>
+
+    <!-- Filtro Ajax -->
+    <filter>
+        <filter-name>AjaxAnywhere</filter-name>
+        <filter-class>org.ajaxanywhere.AAFilter</filter-class>
+    </filter>
+
+    <!-- Filtro DisplayTag -->
+    <filter>
+        <filter-name>DisplayTagFilter</filter-name>
+        <filter-class>org.displaytag.filter.ResponseOverrideFilter</filter-class>
+    </filter>
+
+    <!-- Filtro que inclui dados do request no log -->
+    <filter>
+        <filter-name>RequestInfoMDCFilter</filter-name>
+        <filter-class>
+            br.gov.camara.util.log4j.RequestInfoMDCFilter
+        </filter-class>
+    </filter>
+
+    <!-- Filtro que verifica se todas as sessões e transações Hibernate foram fechadas -->
+    <filter>
+        <filter-name>HibernateFilter</filter-name>
+        <filter-class>
+            sigesp.comum.util.hibernate.HibernateServletFilter
+        </filter-class>
+    </filter>
+
+    <!-- Mapeamentos dos filtros --> 
+    <filter-mapping>
+        <filter-name>AjaxAnywhere</filter-name>
+        <servlet-name>action</servlet-name>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>DisplayTagFilter</filter-name>
+        <servlet-name>action</servlet-name>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>RequestInfoMDCFilter</filter-name>
+        <servlet-name>action</servlet-name>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>HibernateFilter</filter-name>
+        <servlet-name>action</servlet-name>
+    </filter-mapping>
+
+    <!-- Listener de sessão -->
+    
+
+    <!-- Standard Action Servlet Configuration (with debugging) -->
+    <servlet>
+        <servlet-name>action</servlet-name>
+        <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+        <init-param>
+            <param-name>config</param-name>
+            <param-value>/WEB-INF/config/Comum/struts-config/Comum-struts.xml</param-value>
+        </init-param>
+        <init-param>
+            <param-name>config/Autenticacao</param-name>
+            <param-value>/WEB-INF/config/Autenticacao/struts-config/Autenticacao-struts.xml</param-value>
+        </init-param>
+        <init-param>
+            <param-name>config/BancoTalentosGestao</param-name>
+            <param-value>/WEB-INF/config/BancoTalentosGestao/struts-config/BancoTalentosGestao-struts.xml</param-value>
+        </init-param>
+        <init-param>
+            <param-name>config/BancoTalentosApoio</param-name>
+            <param-value>/WEB-INF/config/BancoTalentosApoio/struts-config/BancoTalentosApoio-struts.xml</param-value>
+        </init-param>
+        
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>0</param-value>
+        </init-param>
+        <init-param>
+            <param-name>detail</param-name>
+            <param-value>0</param-value>
+        </init-param>
+        <init-param>
+            <param-name>relatorioBancoTalentosGestao</param-name>
+            <param-value>../config/BancoTalentosGestao/relatorio-config</param-value>
+        </init-param>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+
+    <!-- Standard Action Servlet Mapping -->
+    <servlet-mapping>
+        <servlet-name>action</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+
+    <!-- The Usual Welcome File List -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!-- Struts Tag Library Descriptors -->
+    <taglib>
+        <taglib-uri>/tlds/struts-bean</taglib-uri>
+        <taglib-location>/WEB-INF/tlds/struts-bean.tld</taglib-location>
+    </taglib>
+    <taglib>
+        <taglib-uri>/tlds/struts-html</taglib-uri>
+        <taglib-location>/WEB-INF/tlds/struts-html.tld</taglib-location>
+    </taglib>
+    <taglib>
+        <taglib-uri>/tlds/struts-logic</taglib-uri>
+        <taglib-location>/WEB-INF/tlds/struts-logic.tld</taglib-location>
+    </taglib>
+    <taglib>
+        <taglib-uri>/tlds/struts-nested</taglib-uri>
+        <taglib-location>/WEB-INF/tlds/struts-nested.tld</taglib-location>
+    </taglib>
+    <taglib>
+        <taglib-uri>/tlds/struts-tiles</taglib-uri>
+        <taglib-location>/WEB-INF/tlds/struts-tiles.tld</taglib-location>
+    </taglib>
+    <taglib>
+        <taglib-uri>/tlds/sigesp-display</taglib-uri>
+        <taglib-location>/WEB-INF/tlds/sigesp-display.tld</taglib-location>
+    </taglib>
+    <taglib>
+        <taglib-uri>/tlds/sigesp-seguranca</taglib-uri>
+        <taglib-location>/WEB-INF/tlds/sigesp-seguranca.tld</taglib-location>
+    </taglib>
+    <taglib>
+        <taglib-uri>/tlds/struts-menu</taglib-uri>
+        <taglib-location>/WEB-INF/tlds/struts-menu.tld</taglib-location>
+    </taglib>
+    <taglib>
+        <taglib-uri>/tlds/sigesp-customtag</taglib-uri>
+        <taglib-location>/WEB-INF/tlds/sigesp-customtag.tld</taglib-location>
+    </taglib>
+
+    <taglib>
+        <taglib-uri>/jstl/fmt</taglib-uri>
+        <taglib-location>
+            /WEB-INF/tlds/jstl/fmt.tld
+        </taglib-location>
+    </taglib>
+    <taglib>
+        <taglib-uri>/jstl/c</taglib-uri>
+        <taglib-location>
+            /WEB-INF/tlds/jstl/c.tld
+        </taglib-location>
+    </taglib>
+    <taglib>
+        <taglib-uri>/jstl/x</taglib-uri>
+        <taglib-location>
+            /WEB-INF/tlds/jstl/x.tld
+        </taglib-location>
+    </taglib>
+
+    <taglib>
+        <taglib-uri>/ajax/ajaxanywhere</taglib-uri>
+        <taglib-location>/WEB-INF/tlds/ajax/ajaxanywhere.tld</taglib-location>
+    </taglib>
+
+    <!-- Suporte para HTTPS
+    -->
+    <!--security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Toda a aplicação</web-resource-name>
+            <url-pattern>/*</url-pattern>
+        </web-resource-collection>
+        <user-data-constraint>
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint-->
+
+</web-app>

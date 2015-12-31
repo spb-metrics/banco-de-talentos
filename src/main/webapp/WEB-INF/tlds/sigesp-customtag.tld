@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+
+<!-- Tag Library Descriptor -->
+
+<taglib>
+    
+    <tlibversion>1.0</tlibversion>
+    <jspversion>1.1</jspversion>
+    <shortname>csajsp</shortname>
+    <info> Sigesp Tag Library </info>
+    
+    <tag>
+        <name>tabela</name>
+        <tagclass>sigesp.comum.util.tag.TabelaTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>Cria tabela customizada</info>
+        <attribute>
+            <name>borda</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>largura</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    
+    <tag>
+        <name>linha</name>
+        <tagclass>sigesp.comum.util.tag.LinhaTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>Cria linha</info>
+        <attribute>
+            <name>cabecalho</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>span</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    
+    <tag>
+        <name>coluna</name>
+        <tagclass>sigesp.comum.util.tag.ColunaTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>Cria coluna</info>
+        <attribute>
+            <name>span</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>largura</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    
+    <tag>
+        <name>grade</name>
+        <tagclass>sigesp.comum.util.tag.GradeTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>Cria grade</info>
+        <attribute>
+            <name>lista</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>borda</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>largura</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>qtdeMaxima</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>pagina</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    
+    <tag>
+        <name>colunaGrade</name>
+        <tagclass>sigesp.comum.util.tag.ColunaGradeTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>Cria coluna</info>
+        <attribute>
+            <name>largura</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>titulo</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>propriedade</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>valor</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>href</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>parametroID</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>parametroNome</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    
+    <tag>
+        <name>parametro</name>
+        <tagclass>sigesp.comum.util.tag.ParametroTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>Cria paramêtros de página</info>
+        <attribute>
+            <name>lista</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>propriedade</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>atributo</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>contexto</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>parametro</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    
+    <tag>
+        <name>nivel</name>
+        <tagclass>sigesp.comum.util.tag.NivelTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>Cria níveis de navegação</info>
+        <attribute>
+            <name>lista</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>link</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>parametro</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    
+</taglib>

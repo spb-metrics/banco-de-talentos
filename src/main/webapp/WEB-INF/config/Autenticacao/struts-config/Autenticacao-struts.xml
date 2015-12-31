@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+<form-beans>
+<form-bean name="encaminharLogon" type="br.gov.camara.visao.autenticacao.form.EncaminharLogonForm">
+</form-bean>
+</form-beans>
+<global-exceptions>
+<exception key="sigesp.comum.erro.globalexception" type="java.lang.Exception" bundle="comum" path="/encaminharErro.do" scope="request" handler="sigesp.comum.util.exception.GlobalExceptionHandler"/>
+</global-exceptions>
+<global-forwards>
+<forward name="encaminharLogon" path="/encaminharLogon.do"/>
+<forward name="encaminharLogoff" path="/encaminharLogoff.do"/>
+<forward name="encaminharErro" path="/encaminharErro.do"/>
+<forward name="encaminharUsuarioNaoAutorizado" path="/encaminharUsuarioNaoAutorizado.do"/>
+</global-forwards>
+<action-mappings>
+<action path="/encaminharErro" forward="sigesp.comum.erro"/>
+<action path="/encaminharUsuarioNaoAutorizado" forward="sigesp.comum.usuarionaoautorizado"/>
+<action path="/encaminharAvisoJavaScript" forward="sigesp.comum.avisojavascript"/>
+<action path="/indexAutenticacao" forward="visao.autenticacao.indexautenticacao"/>
+<action path="/avisarJavaScriptEncaminharLogon" type="sigesp.comum.util.struts.actions.RedirAcao" input="visao.autenticacao.encaminharlogon" name="encaminharLogon" scope="request" validate="false">
+<forward name="sucesso" path="/encaminharAvisoJavaScript.do"/>
+</action>
+<action path="/encaminharLogoff" type="br.gov.camara.visao.autenticacao.action.AutenticacaoAction" input="visao.autenticacao.indexautenticacao">
+<forward name="sucesso" path="visao.autenticacao.encaminharlogoff"/>
+</action>
+<action path="/encaminharLogon" type="br.gov.camara.visao.autenticacao.action.AutenticacaoAction" input="visao.autenticacao.indexautenticacao">
+<forward name="sucesso" path="visao.autenticacao.encaminharlogon"/>
+</action>
+<action path="/validarAutenticacaoExterna" type="br.gov.camara.visao.autenticacao.action.AutenticacaoAction" input="/encaminharLogon.do">
+<forward name="sucesso" path="/validarLogonEncaminharModulo.do"/>
+</action>
+<action path="/validarLogonEfetuarLogon" type="br.gov.camara.visao.autenticacao.action.AutenticacaoAction" input="/encaminharLogon.do" name="encaminharLogon" scope="request" validate="true" parameter="EncaminharLogon">
+<forward name="sucesso" path="/validarLogonEncaminharModulo.do"/>
+</action>
+<action path="/validarLogonEncaminharModulo" type="br.gov.camara.visao.autenticacao.action.AutenticacaoAction" input="visao.autenticacao.validar">
+<forward name="sucesso" path="visao.autenticacao.validar"/>
+</action>
+</action-mappings>
+<controller processorClass="br.gov.camara.util.actionplugin.ActionPlugInTilesRequestProcessor"/>
+<message-resources parameter="resources.Autenticacao"/>
+<message-resources parameter="resources.Comum" key="comum"/>
+<plug-in className="br.gov.camara.util.actionplugin.ActionPlugInPlugIn">
+<set-property property="configFile" value="/WEB-INF/config/projeto/action-plug-in/action-plug-in-config.xml"/>
+<set-property property="configDTD" value="/WEB-INF/config/Comum/action-plug-in/action-plug-in-config_1_0.dtd"/>
+</plug-in>
+<plug-in className="org.apache.struts.tiles.TilesPlugin">
+<set-property property="definitions-parser-validate" value="true"/>
+<set-property property="moduleAware" value="true"/>
+<set-property property="definitions-config" value="/WEB-INF/config/Comum/tiles-defs/Comum-tiles.xml, /WEB-INF/config/Autenticacao/tiles-defs/Autenticacao-tiles.xml"/>
+</plug-in>
+<plug-in className="br.gov.camara.util.strutsmenu.MenuPlugInCD">
+<set-property property="menuConfig" value="/WEB-INF/config/Autenticacao/menu-config/Autenticacao-menu.xml"/>
+</plug-in>
+<plug-in className="br.gov.camara.util.locale.LocalePlugIn">
+<set-property property="linguagem" value="pt"/>
+<set-property property="pais" value="BR"/>
+</plug-in>
+<plug-in className="sigesp.comum.util.hibernate.HibernatePlugIn"/>
+</struts-config>
+

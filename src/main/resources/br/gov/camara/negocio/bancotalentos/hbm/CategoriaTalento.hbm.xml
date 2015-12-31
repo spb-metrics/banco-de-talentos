@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="br.gov.camara.negocio.bancotalentos.pojo.CategoriaTalento" table="CATEGORIATALENTO" lazy="true">
+		<id name="identificador" column="ideCategoria" type="java.lang.Integer" >
+			<generator class="increment" />
+		</id>
+		<property name="nome" column="nomCategoria" not-null="true" type="java.lang.String"/>
+		<property name="descricao" column="desCategoria" not-null="false" type="java.lang.String"/>
+		<property name="dicaPreenchimento" column="desDicaPreenchimento" not-null="false" type="java.lang.String"/>
+		<property name="indicativoUnicidade" column="indUnicidade" not-null="true" type="java.lang.String"/>
+		<property name="sequencialOrdenacao" column="seqOrdenacao" not-null="true" type="java.lang.Integer"/>
+        <set name="gruposCategoriaTalento" table="GrupoCategoriaTalento" order-by="codGrupo" lazy="true">
+           <key column="ideCategoria"/>
+           <many-to-many column="codGrupo" class="br.gov.camara.negocio.autenticacaoperfil.pojo.Grupo"/>
+        </set>
+	</class>
+</hibernate-mapping>

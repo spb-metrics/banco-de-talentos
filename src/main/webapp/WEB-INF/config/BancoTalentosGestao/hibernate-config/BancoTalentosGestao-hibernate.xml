@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hibernate-configuration> 
+
+    <session-factory>
+
+        <!-- Mapping files -->
+        <mapping resource="br/gov/camara/negocio/bancotalentos/hbm/AtributoTalento.hbm.xml"/>
+        <mapping resource="br/gov/camara/negocio/bancotalentos/hbm/AtributoTalentoOpcao.hbm.xml"/>        
+        <mapping resource="br/gov/camara/negocio/bancotalentos/hbm/AtributoTalentoValorado.hbm.xml"/>
+        <mapping resource="br/gov/camara/negocio/bancotalentos/hbm/CategoriaAtributoTalento.hbm.xml"/>
+        <mapping resource="br/gov/camara/negocio/bancotalentos/hbm/CategoriaTalento.hbm.xml"/>
+        <mapping resource="br/gov/camara/negocio/bancotalentos/hbm/Pessoa.hbm.xml"/>
+        <mapping resource="br/gov/camara/negocio/bancotalentos/hbm/Lotacao.hbm.xml"/>
+        <mapping resource="br/gov/camara/negocio/bancotalentos/hbm/TabelaApoioMM.hbm.xml"/>
+        <mapping resource="br/gov/camara/negocio/bancotalentos/hbm/Talento.hbm.xml"/>
+        <mapping resource="br/gov/camara/negocio/bancotalentos/hbm/TipoFiltroConsulta.hbm.xml"/>
+        <mapping resource="br/gov/camara/negocio/bancotalentos/hbm/FiltroConsulta.hbm.xml"/>
+        
+        <mapping resource="br/gov/camara/negocio/comum/hbm/TipoHTML.hbm.xml"/>
+
+        <mapping resource="br/gov/camara/negocio/autenticacaoperfil/hbm/Grupo.hbm.xml"/>
+        <mapping resource="br/gov/camara/negocio/autenticacaoperfil/hbm/UsuarioSistema.hbm.xml"/>
+        
+    </session-factory>
+
+</hibernate-configuration>

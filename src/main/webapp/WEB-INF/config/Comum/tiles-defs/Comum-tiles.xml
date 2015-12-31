@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+<!--***************************************************************************-->
+<!--LAYOUTS                                                                    -->
+<!--***************************************************************************-->
+<!--PAGINA - Definicao do Sigesp Layout-->
+<definition name="sigesp.layout.paginas.padrao" path="/WEB-INF/paginas/Comum/layouts/sigespLayout.jsp">
+<put name="titulo" value=""/>
+<put name="idPagina" value=""/>
+<put name="cabecalho" value="/WEB-INF/paginas/Comum/cabecalho.jsp"/>
+<put name="menuSuperior" value="/WEB-INF/paginas/Comum/menu/ComumMenu.jsp"/>
+<put name="identificacao" value="/WEB-INF/paginas/Comum/identificacao.jsp"/>
+<put name="rodape" value="/WEB-INF/paginas/Comum/rodape.jsp"/>
+<put name="mensagemGlobal" value="/WEB-INF/paginas/Comum/includeMensagemGlobal.jsp"/>
+<put name="mensagens" value="/WEB-INF/paginas/Comum/mensagens.jsp"/>
+<put name="direcionadorAcao" value="/WEB-INF/paginas/Comum/emBranco.jsp"/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/Comum/emBranco.jsp"/>
+<put name="corpo" value="/WEB-INF/paginas/Comum/emBranco.jsp"/>
+</definition>
+<!--PAGINA - Definicao do Sigesp para Gestao-->
+<definition name="sigesp.layout.paginas.gestao" extends="sigesp.layout.paginas.padrao" path="/WEB-INF/paginas/Comum/layouts/sigespGestaoLayout.jsp">
+<put name="filtro" value="/WEB-INF/paginas/SigespFiltroServidor/sigespFiltroServidor.jsp"/>
+</definition>
+<!--PAGINA - Definicao do Sigesp Layout para Pop-up-->
+<definition name="sigesp.layout.paginas.popup" path="/WEB-INF/paginas/Comum/layouts/sigespPopupLayout.jsp">
+<put name="titulo" value=""/>
+<put name="mensagens" value="/WEB-INF/paginas/Comum/mensagens.jsp"/>
+<put name="direcionadorAcao" value="/WEB-INF/paginas/Comum/emBranco.jsp"/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/Comum/emBranco.jsp"/>
+<put name="corpo" value="/WEB-INF/paginas/Comum/emBranco.jsp"/>
+</definition>
+<!--***************************************************************************-->
+<!--COMUNS                                                                     -->
+<!--***************************************************************************-->
+<!--PAGINA - Definicao da pagina ERRO-->
+<definition name="sigesp.comum.erro" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Erro de processamento"/>
+<put name="corpo" value="/WEB-INF/paginas/Comum/erro.jsp"/>
+</definition>
+<!--PAGINA - Definicao da pagina LOGON-->
+<definition name="sigesp.comum.logon" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Logon"/>
+<put name="corpo" value="/WEB-INF/paginas/Comum/logon.jsp"/>
+</definition>
+<!--PAGINA - Definicao da pagina LOGOFF-->
+<definition name="sigesp.comum.logoff" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Logoff"/>
+<put name="corpo" value="/WEB-INF/paginas/Comum/logoff.jsp"/>
+</definition>
+<!--PAGINA - Definicao da pagina AVISOJAVASCRIPT-->
+<definition name="sigesp.comum.avisojavascript" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Aviso de JavaScript"/>
+<put name="corpo" value="/WEB-INF/paginas/Comum/avisoJavaScript.jsp"/>
+</definition>
+<!--PAGINA - Definicao da pagina USUARIO NAO AUTORIZADO-->
+<definition name="sigesp.comum.usuarionaoautorizado" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Usuário não autorizado"/>
+<put name="corpo" value="/WEB-INF/paginas/Comum/usuarioNaoAutorizado.jsp"/>
+</definition>
+<!--PAGINA - Definicao da pagina VALIDACAO EXTERNA-->
+<definition name="sigesp.comum.encaminharautenticacaovalidacaoexterna" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Validação externa"/>
+<put name="corpo" value="/WEB-INF/paginas/Comum/autenticacaoValidacaoExterna.jsp"/>
+</definition>
+<!--PAGINA - Definicao da pagina PROCESSAMENTO DE EVENTO-->
+<definition name="sigesp.comum.processamentoevento" extends="sigesp.layout.paginas.popup">
+<put name="titulo" value="Processamento de evento"/>
+<put name="corpo" value="/WEB-INF/paginas/Comum/processamentoEvento/encaminhaProcessamento.jsp"/>
+</definition>
+<!--PAGINA - Definicao da pagina PROCESSAMENTO DE RELATORIO-->
+<definition name="sigesp.comum.relatorio" path="/WEB-INF/paginas/Comum/relatorio.jsp">
+<put name="titulo" value=""/>
+</definition>
+<!--***************************************************************************-->
+<!--Definições da aplicação Comum                                              -->
+<!--***************************************************************************-->
+<!--PAGINA - Definicoes das paginas da aplicacao Comum-->
+<definition name="visao.comum.configuracaolog" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Log"/>
+<put name="idPagina" value=""/>
+<put name="direcionadorAcao" value="/WEB-INF/paginas/Comum/direcionadoresAcao/configuracaoLog.js"/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/Comum/javascript/configuracaoLog.js"/>
+<put name="corpo" value="/WEB-INF/paginas/Comum/configuracaoLog.jsp"/>
+</definition>
+<definition name="visao.comum.exclusaosessaoativa" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Confirmação de exclusão de uma sessão"/>
+<put name="idPagina" value=""/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/Comum/javascript/exclusaoSessaoAtiva.js"/>
+<put name="corpo" value="/WEB-INF/paginas/Comum/exclusaoSessaoAtiva.jsp"/>
+</definition>
+<definition name="visao.comum.indexcomum" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Index"/>
+<put name="idPagina" value=""/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/Comum/javascript/indexComum.js"/>
+<put name="corpo" value="/WEB-INF/paginas/Comum/indexComum.jsp"/>
+</definition>
+<definition name="visao.comum.mensagemglobal" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Mensagem Global"/>
+<put name="idPagina" value=""/>
+<put name="direcionadorAcao" value="/WEB-INF/paginas/Comum/direcionadoresAcao/mensagemGlobal.js"/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/Comum/javascript/mensagemGlobal.js"/>
+<put name="corpo" value="/WEB-INF/paginas/Comum/mensagemGlobal.jsp"/>
+</definition>
+<definition name="visao.comum.redirecionamentosistema" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Redirecionamento sistema"/>
+<put name="idPagina" value=""/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/Comum/javascript/redirecionamentoSistema.js"/>
+<put name="corpo" value="/WEB-INF/paginas/Comum/redirecionamentoSistema.jsp"/>
+</definition>
+<definition name="visao.comum.sessoesativas" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Sessões Ativas"/>
+<put name="idPagina" value=""/>
+<put name="direcionadorAcao" value="/WEB-INF/paginas/Comum/direcionadoresAcao/sessoesAtivas.js"/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/Comum/javascript/sessoesAtivas.js"/>
+<put name="corpo" value="/WEB-INF/paginas/Comum/sessoesAtivas.jsp"/>
+</definition>
+<definition name="visao.comum.validar" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Autenticação Externa"/>
+<put name="idPagina" value=""/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/Comum/javascript/validar.js"/>
+<put name="corpo" value="/WEB-INF/paginas/Comum/validar.jsp"/>
+</definition>
+<definition name="visao.comum.versao" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Versão"/>
+<put name="idPagina" value=""/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/Comum/javascript/versao.js"/>
+<put name="corpo" value="/WEB-INF/paginas/Comum/versao.jsp"/>
+</definition>
+</tiles-definitions>
+

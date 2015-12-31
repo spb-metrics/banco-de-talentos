@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<MenuConfig>
+    <Displayers>
+        <Displayer name="SigespCoolMenu"
+                   type="br.gov.camara.util.strutsmenu.ExtendedCoolMenuDisplayer"/>
+    </Displayers>
+    <Menus>
+        <Menu name="mnuModulosNaoLogado" title="Módulos"></Menu>
+
+        <Menu name="mnuUsuarioLogado" title="Usuário">
+            <Item name="itmNovoLogin" title="Novo Login"
+                toolTip="Efetuar novo login" page="/encaminharLogon.do" />
+            <Item name="itmLogout" title="Logout"
+                toolTip="Efetuar logout" page="/encaminharLogoff.do" />
+        </Menu>
+
+        <Menu name="mnuUsuarioSoLogoff" title="Usuário">
+            <Item name="itmLogoutSomente" title="Logout"
+                toolTip="Efetuar logout"
+                page="/encaminharLogoff.do?nored" />
+        </Menu>
+
+        <Menu name="mnuUsuarioNaoLogado" title="Usuário">
+            <Item name="itmLogin" title="Login" toolTip="Efetuar login"
+                page="/encaminharLogon.do" />
+        </Menu>
+
+        <Menu name="mnuUsuarioSomente" title="Usuário">
+        </Menu>
+
+        <Menu name="mnuComum" title="Serviços">
+        </Menu>
+
+        <Menu name="mnuAutenticacao" title="Autenticação">
+        </Menu>
+    </Menus>
+</MenuConfig>

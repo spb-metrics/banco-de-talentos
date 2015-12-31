@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+<!--***************************************************************************-->
+<!--Definições da aplicação Autenticacao                                       -->
+<!--***************************************************************************-->
+<!--PAGINA - Definicoes das paginas da aplicacao Autenticacao-->
+<definition name="visao.autenticacao.encaminharlogoff" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Logoff"/>
+<put name="idPagina" value=""/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/Autenticacao/javascript/encaminharLogoff.js"/>
+<put name="corpo" value="/WEB-INF/paginas/Autenticacao/encaminharLogoff.jsp"/>
+</definition>
+<definition name="visao.autenticacao.encaminharlogon" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Logon"/>
+<put name="idPagina" value=""/>
+<put name="direcionadorAcao" value="/WEB-INF/paginas/Autenticacao/direcionadoresAcao/encaminharLogon.js"/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/Autenticacao/javascript/encaminharLogon.js"/>
+<put name="corpo" value="/WEB-INF/paginas/Autenticacao/encaminharLogon.jsp"/>
+</definition>
+<definition name="visao.autenticacao.indexautenticacao" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Autenticação"/>
+<put name="idPagina" value=""/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/Autenticacao/javascript/indexAutenticacao.js"/>
+<put name="corpo" value="/WEB-INF/paginas/Autenticacao/indexAutenticacao.jsp"/>
+</definition>
+<definition name="visao.autenticacao.validar" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Validação de logon"/>
+<put name="idPagina" value=""/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/Autenticacao/javascript/validar.js"/>
+<put name="corpo" value="/WEB-INF/paginas/Autenticacao/validar.jsp"/>
+</definition>
+</tiles-definitions>
+

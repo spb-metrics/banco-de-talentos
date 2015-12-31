@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="br.gov.camara.negocio.autenticacaoperfil.pojo.FuncionalidadeSistema" table="FUNCIONALIDADESISTEMA" lazy="true">
+		<id name="identificador" column="ideFuncionalidadeSistema" type="java.lang.Integer" >
+			<generator class="increment" />
+		</id>
+		<property name="nome" column="nomFuncionalidadeSistema" not-null="true" type="java.lang.String"/>
+		<property name="descricao" column="desFuncionalidadeSistema" type="java.lang.String"/>
+		<property name="objetoControlado" column="nomObjetoControlado" not-null="true" type="java.lang.String"/>
+		<many-to-one name="funcionalidadeAgrupadora" class="br.gov.camara.negocio.autenticacaoperfil.pojo.FuncionalidadeSistema" column="ideFuncionalidadeAgrupadora" />
+		<many-to-one name="sistema" class="br.gov.camara.negocio.autenticacaoperfil.pojo.Sistema" column="ideSistema" />
+	</class>
+</hibernate-mapping>

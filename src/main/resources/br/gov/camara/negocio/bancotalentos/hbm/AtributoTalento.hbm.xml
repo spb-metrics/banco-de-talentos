@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="br.gov.camara.negocio.bancotalentos.pojo.AtributoTalento" table="ATRIBUTOTALENTO" lazy="true">
+		<id name="identificador" column="ideAtributo" type="java.lang.Integer" >
+			<generator class="increment" />
+		</id>
+		<many-to-one name="atributoTalentoPai" class="br.gov.camara.negocio.bancotalentos.pojo.AtributoTalento" column="ideAtributoPai" />
+		<property name="nome" column="nomAtributo" not-null="false" type="java.lang.String"/>
+		<many-to-one name="tipoHTML" class="br.gov.camara.negocio.comum.pojo.TipoHTML" column="ideTipoHtml" />
+		<property name="mascara" column="desMascara" not-null="false" type="java.lang.String"/>
+		<many-to-one name="tabelaApoioMM" class="br.gov.camara.negocio.bancotalentos.pojo.TabelaApoioMM" column="ideTabelaApoioMM" />
+		<property name="indicativoPesquisa" column="indPesquisa" not-null="false" type="java.lang.String"/>
+		<property name="descricaoPesquisa" column="desPesquisa" not-null="false" type="java.lang.String"/>
+		<property name="tipoDado" column="indTipoDado" not-null="false" type="java.lang.String"/>
+		<set name="atributoTalentoOpcoes" inverse="true" order-by="desAtributoOpcao" lazy="true">
+        	<key column="ideAtributo"/>
+        	<one-to-many class="br.gov.camara.negocio.bancotalentos.pojo.AtributoTalentoOpcao"/>
+    	</set>
+	</class>
+</hibernate-mapping>

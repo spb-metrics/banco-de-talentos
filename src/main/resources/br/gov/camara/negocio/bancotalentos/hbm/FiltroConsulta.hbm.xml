@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="br.gov.camara.negocio.bancotalentos.pojo.FiltroConsulta" table="FILTROCONSULTA" lazy="true">
+		<id name="identificador" column="ideFiltroConsulta" type="java.lang.Integer" >
+			<generator class="increment" />
+		</id>
+		<many-to-one name="tipoFiltroConsulta" class="br.gov.camara.negocio.bancotalentos.pojo.TipoFiltroConsulta" column="ideTipoFiltroConsulta" />
+		<property name="nomeFiltroConsulta" column="nomFiltroConsulta" not-null="false" type="java.lang.String"/>
+
+		<set name="grupoCriterioConsulta" table="GrupoCriterioConsulta" lazy="true" order-by="codGrupo">
+        	<key column="ideFiltroConsulta"/>
+        	<many-to-many column="codGrupo" class="br.gov.camara.negocio.autenticacaoperfil.pojo.Grupo"/>
+    	</set>
+
+		<set name="filtroConsultaUsuario" table="FiltroConsultaUsuario" lazy="true" order-by="ideUsuario">
+        	<key column="ideFiltroConsulta"/>
+        	<many-to-many column="ideUsuario" class="br.gov.camara.negocio.autenticacaoperfil.pojo.UsuarioSistema"/>
+    	</set>
+    	
+		<set name="filtroConsultaGrupo" table="FiltroConsultaGrupo" lazy="true" order-by="codGrupo">
+        	<key column="ideFiltroConsulta"/>
+        	<many-to-many column="codGrupo" class="br.gov.camara.negocio.autenticacaoperfil.pojo.Grupo"/>
+    	</set>
+	</class>
+</hibernate-mapping>

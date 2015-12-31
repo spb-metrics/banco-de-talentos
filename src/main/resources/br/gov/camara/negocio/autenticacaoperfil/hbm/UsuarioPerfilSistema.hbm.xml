@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="br.gov.camara.negocio.autenticacaoperfil.pojo.UsuarioPerfilSistema" table="USUARIOPERFILSISTEMA" lazy="true">
+	    <composite-id>
+	        <key-many-to-one name="perfilSistema" class="br.gov.camara.negocio.autenticacaoperfil.pojo.PerfilSistema" column="idePerfilSistema"/>
+	        <key-many-to-one name="usuarioSistema" class="br.gov.camara.negocio.autenticacaoperfil.pojo.UsuarioSistema" column="ideUsuario"/>
+	    </composite-id>
+	    <property name="indicativoGestor" column="indGestorPerfil" type="java.lang.String"/>
+	</class>
+	
+</hibernate-mapping>

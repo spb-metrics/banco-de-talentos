@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="br.gov.camara.negocio.bancotalentos.pojo.Lotacao" table="SIGESPPESSOALLOTACAO" lazy="true">
+		<id name="identificador" column="idePessoalLotacao" type="java.lang.Integer" >
+            <generator class="assigned"/>
+		</id>
+		<property name="descricao" column="desLotacao" not-null="true" type="java.lang.String"/>
+		<property name="dataInicio" column="datInicio" not-null="false" type="java.util.Calendar"/>
+		<property name="dataTermino" column="datTermino" not-null="false" type="java.util.Calendar"/>
+	</class>
+</hibernate-mapping>

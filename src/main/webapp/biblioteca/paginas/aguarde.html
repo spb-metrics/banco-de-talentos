@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../../biblioteca/estilos/camara.css" type="text/css" />
+        <title>
+            Aguarde...
+        </title>
+        <meta http-equiv="pragma" content="no-cache" />
+        <meta http-equiv="expires" content="0" />
+    </head>
+
+    <body>
+        <script src="../../biblioteca/funcoes/comum/common.js"></script>
+        <script src="../../biblioteca/funcoes/biblio.js"></script>
+
+    	<div id="aguardeProgress" style="width: 190;height: 120;visibility: hidden;">
+    		<center>
+    			<h3>Aguarde...</h3>
+    			<img src="../../biblioteca/imagens/submodal/processando.gif">
+    		</center>
+    	</div>
+
+		<script type="text/javascript">
+			var objAguarde = $('aguardeProgress');
+			centralizar(objAguarde);
+			objAguarde.style.visibility = "visible";
+		</script>
+	</body>
+</html>

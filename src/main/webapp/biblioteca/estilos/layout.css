@@ -1,0 +1,231 @@
+/*** SPAN - LAYOUT APLICAÇÃO ***/
+
+/*** BODY ***/
+body {
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	background-color: #FFFFFF;
+	color: #434343;
+	margin: 0px;
+	left: 0px;
+	top: 0px;
+	width: 780px;
+}
+
+/*** TABLE - Layout Aplicação ***/
+
+table#layoutAplicacao, tr#layoutAplicacao, td#layoutAplicacao {
+	padding: 0px;
+	border-spacing: 0px;
+	border-style: none;
+	border: none;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	width: 759px;
+}
+
+/*** TABLE - Layout Página ***/
+
+tr#layoutAplicacao.paginaAplicacao {
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	vertical-align: top;
+	height: 480px;
+	width: 759px;
+	padding: 10px;
+}
+
+td#layoutAplicacao.paginaAplicacao {
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	padding: 10px;
+	border-spacing: 0px;
+	border-style: none;
+	border: none;
+	width: 759px;
+}
+
+/*** CABECALHO ***/
+
+.tituloOrgao, .tituloSubOrgao, .tituloAplicacao {
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	color: #edffff;
+	vertical-align: middle;
+	z-index: 1;
+}
+
+.tituloModulo, .descricaoModulo {
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size:21px;
+	text-align:center;
+}
+
+.descricaoModulo {
+	font-size: 11px;
+	text-align: justify;
+}
+
+.tituloAplicacao {
+	position: absolute;
+	font-size: 28px;
+	text-align: right;
+	top: 2px;
+	left: 300px;
+	width: 469px;
+}
+.tituloOrgao {
+	position: absolute;
+	font-size: 12px;
+	text-align: left;
+	left: 75px;
+	top: 5px;
+}
+.tituloSubOrgao {
+	position: absolute;
+	font-size: 12px;
+	text-align: left;
+	left: 75px;
+	top: 22px;
+}
+
+/* identificacao */
+.identificacaoAplicacao {
+	background-image: url("../../biblioteca/imagens/identificacao/identificacao.gif");
+	width: 758px;
+	display: block;
+	height: 42px;
+	position: relative;
+}
+
+.identificacaoPagina {
+	font-weight: bold;
+	font-size: 11px;
+	left: 25px;
+	position: absolute;
+	width: 259px;
+	height: 31px;
+}
+.identificacaoUsuario {
+	font-weight: bold;
+	position: absolute;
+	left: 297px;
+	font-size: 11px;
+	width: 415px;
+}
+.mensagemExibicao {
+	font-style: italic;
+	position: absolute;
+	left: 430px;
+	top: 25px;
+	font-size: 12px;
+	width: 320px;
+}
+.mensagemExibicaoDetalhe {
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* erros e mensagens de sucesso */
+
+span.messagemGlobal {
+	color: #FF7700;
+	border: 1px solid #FF7700;
+	background-color: #FFED9E;
+	padding: 2px 4px 2px 4px;
+	margin-bottom: 20px;
+	width: *;
+	display: block;
+	font-weight: bolder;
+	font-size: medium;
+	text-align: center;
+}
+
+span.autorMessagemGlobal {
+	font-size: xx-small; 
+	color: #FFED9E;
+	background-color: #FF7700;
+}
+
+span#mensagens {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: *;
+	display: block;
+}
+
+span.errors {
+	color: #FF0000;
+	background-color: #ffddaa;
+	border: 1px solid #FF0000;
+	padding: 2px 4px 2px 4px;
+	margin-bottom: 5px;
+	width: *;
+	display: block;
+}
+
+span.messages {
+	color: #008800;
+	background-color: #ddffaa;
+	border: 1px solid #008800;
+	padding: 2px 4px 2px 4px;
+	margin-bottom: 20px;
+	width: *;
+	display: block;
+}
+
+.rodape {
+	color: #00225f;
+	background-color: #cddef5;
+	width: 779px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 10px;
+	padding: 2px;
+}
+
+
+/*** BODY ***/
+body#popup {
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	background-color: #FFFFFF;
+	color: #434343;
+	margin: 0px;
+	left: 0px;
+	top: 0px;
+	width: 700px;
+}
+
+/*** TABLE - Layout Aplicação ***/
+
+table#layoutAplicacaoPopup, tr#layoutAplicacaoPopup, td#layoutAplicacaoPopup {
+	padding: 0px;
+	border-spacing: 0px;
+	border-style: none;
+	border: none;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	width: 669px;
+}
+
+/*** TABLE - Layout Página ***/
+
+tr#layoutAplicacaoPopup.paginaAplicacao {
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	vertical-align: top;
+	width: 669px;
+	padding: 10px;
+}
+
+td#layoutAplicacaoPopup.paginaAplicacao {
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	padding: 10px;
+	border-spacing: 0px;
+	border-style: none;
+	border: none;
+	width: 669px;
+}

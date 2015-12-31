@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="br.gov.camara.negocio.bancotalentos.pojo.CategoriaAtributoTalento" table="CATEGORIAATRIBUTOTALENTO" lazy="true">
+		<id name="identificador" column="ideCategoriaAtributo" type="java.lang.Integer" >
+			<generator class="increment" />
+		</id>
+		<property name="sequencialOrdenacao" column="seqPreenchimento" not-null="true" type="java.lang.Integer"/>
+		<many-to-one name="atributoTalento" class="br.gov.camara.negocio.bancotalentos.pojo.AtributoTalento" column="ideAtributo" lazy="false"/>
+		<many-to-one name="categoriaTalento" class="br.gov.camara.negocio.bancotalentos.pojo.CategoriaTalento" column="ideCategoria" />
+		<property name="indicativoObrigatoriedade" column="indObrigatoriedade" not-null="true" type="java.lang.String"/>
+		<property name="formacaoDescricao" column="indFormacaoDescricao" not-null="true" type="java.lang.String"/>
+		<property name="apelido" column="nomApelido" not-null="false" type="java.lang.String"/>
+		<property name="dicaPreenchimento" column="desDicaPreenchimento" not-null="false" type="java.lang.String"/>		
+		<set name="atributosTalentoValorados" inverse="true" order-by="desValoracao" lazy="true">
+        	<key column="ideCategoriaAtributo"/>
+        	<one-to-many class="br.gov.camara.negocio.bancotalentos.pojo.AtributoTalentoValorado"/>
+    	</set>
+	</class>
+</hibernate-mapping>

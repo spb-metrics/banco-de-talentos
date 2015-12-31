@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN" 
+  "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>1.1</jsp-version>
+	<short-name>TagGestor</short-name>
+	<display-name> Sigesp Tag Library </display-name>
+	
+	<tag>
+	    <name>seGestor</name>
+	    <tag-class>sigesp.autenticacaoperfilgestao.util.taglib.GestorTag</tag-class>           
+	    <body-content>JSP</body-content>
+	    <description>Verifica se o usuário é gestor do sistema</description>
+        <attribute>
+            <name>parametro</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+			<description>
+				Nome do parâmetro que possuirá o valor do atributo a ser pesquisado.
+			</description>
+        </attribute>
+        <attribute>
+            <name>atributo</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+			<description>
+				Nome do parâmetro que possuirá o valor do atributo a ser pesquisado.
+			</description>
+        </attribute>
+        <attribute>
+            <name>escopo</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+			<description>
+				Escopo onde o parâmetro será procurado. Use "session" ou "request".
+			</description>
+        </attribute>
+        <attribute>
+            <name>tipo</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+			<description>
+				Tipo de verificação a ser feita:
+				Use "sistema" ou "perfil" para consultar se o usuário é 
+				gestor de sistema ou gestor de perfil respectivamente.
+			</description>
+        </attribute>
+        
+	</tag>
+	
+</taglib> 

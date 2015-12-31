@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hibernate-configuration> 
+
+    <session-factory>
+
+        <!-- Mapping files -->
+
+        <mapping resource="br/gov/camara/negocio/autenticacaoperfil/hbm/UsuarioSistema.hbm.xml"/>
+        <mapping resource="br/gov/camara/negocio/autenticacaoperfil/hbm/Sistema.hbm.xml"/>
+        <mapping resource="br/gov/camara/negocio/autenticacaoperfil/hbm/PerfilSistema.hbm.xml"/>
+        <mapping resource="br/gov/camara/negocio/autenticacaoperfil/hbm/FuncionalidadeSistema.hbm.xml"/>
+
+        <mapping resource="br/gov/camara/negocio/autenticacaoperfil/hbm/GestorSistema.hbm.xml"/>
+        <mapping resource="br/gov/camara/negocio/autenticacaoperfil/hbm/UsuarioPerfilSistema.hbm.xml"/>
+
+        <mapping resource="br/gov/camara/negocio/autenticacaoperfil/hbm/Grupo.hbm.xml"/>
+        
+    </session-factory>
+
+</hibernate-configuration>
+        

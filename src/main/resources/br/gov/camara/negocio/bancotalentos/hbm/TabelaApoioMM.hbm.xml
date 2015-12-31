@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="br.gov.camara.negocio.bancotalentos.pojo.TabelaApoioMM" table="TABELAAPOIOMM" lazy="true">
+		<id name="identificador" column="ideTabelaApoioMM" type="java.lang.Integer" >
+			<generator class="increment" />
+		</id>
+		<property name="nomeTabela" column="nomTabelaApoioMM" not-null="true" type="java.lang.String"/>
+		<many-to-one name="tabelaApoioMestreMM" class="br.gov.camara.negocio.bancotalentos.pojo.TabelaApoioMM" column="ideTabelaApoioMestreMM" />
+		<property name="nomeIdentificador" column="nomIdentificadorTabelaApoio" not-null="true" type="java.lang.String"/>
+		<property name="nomeDescritor" column="nomDescritorTabelaApoio" not-null="true" type="java.lang.String"/>
+		<property name="nomeIdentificadorTabelaMestre" column="nomIdentificadorTabelaMestre" not-null="false" type="java.lang.String"/>
+	</class>
+</hibernate-mapping>

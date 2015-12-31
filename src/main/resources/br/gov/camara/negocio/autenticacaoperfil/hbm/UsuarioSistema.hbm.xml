@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="br.gov.camara.negocio.autenticacaoperfil.pojo.UsuarioSistema" table="USUARIOSISTEMA" lazy="true">
+		<id name="identificador" column="ideUsuario" type="java.lang.Integer" >
+			<generator class="assigned" />
+		</id>
+		<property name="nome" column="nomUsuario" not-null="true" type="java.lang.String"/>
+		<property name="login" column="desLogin" not-null="true" type="java.lang.String"/>
+		<property name="senhaHash" column="numSenhaHash" type="java.lang.String"/>
+		<property name="expiracaoSenha" column="indExpiracaoSenha" type="java.lang.String"/>
+		<property name="dataAtualizacaoSenha" column="datAtualizacaoSenha" type="java.util.Date"/>
+		<property name="dataValidade" column="datValidade" type="java.util.Date"/>
+		<property name="dataDesligamento" column="datDesligamento" type="java.util.Date"/>
+		<many-to-one name="grupo" class="br.gov.camara.negocio.autenticacaoperfil.pojo.Grupo" column="codGrupo" />
+
+
+	</class>
+</hibernate-mapping>

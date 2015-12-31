@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<persistencia-configuracao>
+	<configuracao>
+        <propriedade caminhoModulosMapeamento=""/>
+	</configuracao>
+
+    <conexao nome="conexaoPadrao, conexaoSeguranca, conexaoAutenticacao, conexaoDataHoraBD">
+        <property name="hibernate.show_sql">true</property>
+
+        <property name="hibernate.connection.username">sa</property>
+        <property name="hibernate.connection.password">sa</property>
+
+        <property name="hibernate.connection.url">jdbc:h2:mem:Testes;INIT=RUNSCRIPT FROM 'src/main/scripts/criacao-h2.sql'\;RUNSCRIPT FROM'src/main/scripts/carga-demo.sql'</property>
+        <property name="hibernate.connection.driver_class">org.h2.Driver</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.H2Dialect</property>
+        
+        <!-- Query para obter o timestamp (data e hora) -->
+        <substituicao chave="queryConsultaTimeStampBD">SELECT SYSDATE as timestamp</substituicao>
+
+        <moduloMapeamento nomeArquivo="Autenticacao-mapeamento.xml" caminhoRelativo=""/>
+    </conexao>
+</persistencia-configuracao>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hibernate-configuration> 
+
+    <session-factory>
+        <!-- Mapping files -->
+        <mapping resource="br/gov/camara/negocio/generator/hbm/ChaveTabelaCompartilhada.hbm.xml"/>
+    </session-factory>
+
+</hibernate-configuration>
+        

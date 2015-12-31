@@ -1,0 +1,97 @@
+ul#primary-nav,
+ul#primary-nav ul {
+    width: 259px;
+    margin: 0;
+    padding: 0;
+    background: #cddef5; /* IE6 Bug */
+    font-size: 100%;
+}
+
+ul#primary-nav {
+    float: left;
+    width: 779px;
+}
+
+ul#primary-nav:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+ul#primary-nav li {             /* Opções do menu que são herdadas */
+    position: relative;
+    list-style: none;
+    float: left;
+    width: 259px; /* Width of Menu Items */
+    z-index: 1;
+}
+
+
+ul#primary-nav li a {           /* Nível 0 do menu */
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 5px 17px;
+    font-family:tahoma,arial,helvetica; 
+    font-weight:bold; 
+    border: none;
+    font-size:12px; 
+}
+
+ul#primary-nav li li a {        /* Sub-níveis do menu */
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 5px 17px;
+    font-family:tahoma,arial,helvetica; 
+    font-weight:normal; 
+    border: 1px solid #006699;
+    font-size:8pt
+}
+
+/* Fix IE. Hide from IE Mac \*/
+* html ul#primary-nav li { float: left; height: 1%; }
+* html ul#primary-nav li a { height: 1%; }
+/* End */
+
+ul#primary-nav ul {
+    position: absolute;
+    display: none;
+}
+
+ul#primary-nav ul ul {
+    left: 259px;
+    top: 0;
+}
+
+ul#primary-nav li ul li a { padding: 5px 15px; } /* Sub Menu Styles */
+
+ul#primary-nav li:hover ul ul,
+ul#primary-nav li:hover ul ul ul,
+ul#primary-nav li.over ul ul,
+ul#primary-nav li.over ul ul ul { display: none; } /* Hide sub-menus initially */
+
+ul#primary-nav li:hover ul,
+ul#primary-nav li li:hover ul,
+ul#primary-nav li li li:hover ul,
+ul#primary-nav li.over ul,
+ul#primary-nav li li.over ul,
+ul#primary-nav li li li.over ul { 
+    display: block;                /* The magic */
+} 
+
+ul#primary-nav li.menubar { background: transparent url(../../biblioteca/imagens/menu/Darrow.gif) no-repeat scroll left center; }
+ul#primary-nav li li.menubar { background: transparent url(../../biblioteca/imagens/menu/Rarrow.gif) no-repeat scroll left center; }
+
+ul#primary-nav li:hover,
+ul#primary-nav li.over {
+    color: white;
+    background-color: #999999;
+}
+
+ul#primary-nav li a:hover { 
+    color: white;
+    background-color: #999999;
+}

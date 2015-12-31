@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aplicacao-configuracao> 
+        <propriedade nome="REGISTROS_POR_PAGINA_PADRAO" valor="20"/>
+        <propriedade nome="MAXIMO_REGISTROS_CONSULTA_TALENTOS" valor="500" />
+        <propriedade nome="FILTRAR_CONSULTA_POR_GRUPO" valor="nao" />        
+</aplicacao-configuracao>

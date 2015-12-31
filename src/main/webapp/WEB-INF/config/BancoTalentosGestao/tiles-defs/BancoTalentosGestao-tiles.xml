@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+<!--***************************************************************************-->
+<!--Definições da aplicação BancoTalentosGestao                                -->
+<!--***************************************************************************-->
+<!--PAGINA - Definicoes das paginas da aplicacao BancoTalentosGestao-->
+<definition name="visao.bancotalentosgestao.consultaatributotalentoopcao" extends="sigesp.layout.paginas.popup">
+<put name="titulo" value="Consulta de atributos de talento"/>
+<put name="idPagina" value=""/>
+<put name="direcionadorAcao" value="/WEB-INF/paginas/BancoTalentosGestao/direcionadoresAcao/consultaAtributoTalentoOpcao.js"/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosGestao/javascript/consultaAtributoTalentoOpcao.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosGestao/consultaAtributoTalentoOpcao.jsp"/>
+</definition>
+<definition name="visao.bancotalentosgestao.consultaestatisticacadastro" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Consulta estatística de cadastro"/>
+<put name="idPagina" value=""/>
+<put name="direcionadorAcao" value="/WEB-INF/paginas/BancoTalentosGestao/direcionadoresAcao/consultaEstatisticaCadastro.js"/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosGestao/javascript/consultaEstatisticaCadastro.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosGestao/consultaEstatisticaCadastro.jsp"/>
+</definition>
+<definition name="visao.bancotalentosgestao.consultatalento" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Consulta de talentos"/>
+<put name="idPagina" value=""/>
+<put name="direcionadorAcao" value="/WEB-INF/paginas/BancoTalentosGestao/direcionadoresAcao/consultaTalento.js"/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosGestao/javascript/consultaTalento.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosGestao/consultaTalento.jsp"/>
+</definition>
+<definition name="visao.bancotalentosgestao.curriculo" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Currículo"/>
+<put name="idPagina" value=""/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosGestao/javascript/curriculo.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosGestao/curriculo.jsp"/>
+</definition>
+<definition name="visao.bancotalentosgestao.detalhetalento" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Detalhe de talento"/>
+<put name="idPagina" value=""/>
+<put name="direcionadorAcao" value="/WEB-INF/paginas/BancoTalentosGestao/direcionadoresAcao/detalheTalento.js"/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosGestao/javascript/detalheTalento.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosGestao/detalheTalento.jsp"/>
+</definition>
+<definition name="visao.bancotalentosgestao.encaminhamentotalento" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Talento"/>
+<put name="idPagina" value=""/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosGestao/javascript/encaminhamentoTalento.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosGestao/encaminhamentoTalento.jsp"/>
+</definition>
+<definition name="visao.bancotalentosgestao.exclusaotalento" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Exclusão de talento"/>
+<put name="idPagina" value=""/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosGestao/javascript/exclusaoTalento.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosGestao/exclusaoTalento.jsp"/>
+</definition>
+<definition name="visao.bancotalentosgestao.indexbancotalentosgestao" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Talentos"/>
+<put name="idPagina" value=""/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosGestao/javascript/indexBancoTalentosGestao.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosGestao/indexBancoTalentosGestao.jsp"/>
+</definition>
+<definition name="visao.bancotalentosgestao.listagemconsultaestatistica" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Listagem da consulta"/>
+<put name="idPagina" value=""/>
+<put name="direcionadorAcao" value="/WEB-INF/paginas/BancoTalentosGestao/direcionadoresAcao/listagemConsultaEstatistica.js"/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosGestao/javascript/listagemConsultaEstatistica.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosGestao/listagemConsultaEstatistica.jsp"/>
+</definition>
+<definition name="visao.bancotalentosgestao.resultadoconsultaestatisticacadastro" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Resultado da consulta"/>
+<put name="idPagina" value=""/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosGestao/javascript/resultadoConsultaEstatisticaCadastro.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosGestao/resultadoConsultaEstatisticaCadastro.jsp"/>
+</definition>
+<definition name="visao.bancotalentosgestao.resultadoconsultatalento" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Resultado da consulta de talentos"/>
+<put name="idPagina" value=""/>
+<put name="direcionadorAcao" value="/WEB-INF/paginas/BancoTalentosGestao/direcionadoresAcao/resultadoConsultaTalento.js"/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosGestao/javascript/resultadoConsultaTalento.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosGestao/resultadoConsultaTalento.jsp"/>
+</definition>
+<definition name="visao.bancotalentosgestao.talento" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Talentos"/>
+<put name="idPagina" value=""/>
+<put name="direcionadorAcao" value="/WEB-INF/paginas/BancoTalentosGestao/direcionadoresAcao/talento.js"/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosGestao/javascript/talento.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosGestao/talento.jsp"/>
+</definition>
+</tiles-definitions>
+

@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<persistencia-configuracao>
+
+	<configuracao>
+		<propriedade caminhoModulosMapeamento="../config/" />
+	</configuracao>
+
+    <!-- Parametros de 'formatoConsultaDataBD':
+        {0}: posição onde ficará a coluna do banco que contém a data, ex.: talento.datLancamento
+             Se a coluna armazena também a hora, deve ser especificada uma função (de banco)
+             que desconsidera a hora.
+        {1}: posição onde ficará o sinal da operação, ex.: >=
+        {2}: posição onde ficará a string que representa a data informada pelo usuário, ex.: 23/12/2004
+             Deve ser especificada uma função de banco que converte essa string (no formato DD/MM/YYYY) em data.
+    -->
+    <!-- Propriedade 'queryConsultaTimeStampBD':
+        A query especificada nessa propriedade deve retornar uma única coluna 
+        denominada 'timestamp' contendo a data e hora do banco de dados.
+    -->
+
+    <conexao nome="conexaoPadrao, conexaoDataHoraBD, conexaoSeguranca, conexaoAutenticacao">
+        <property name="hibernate.show_sql">false</property>
+
+        <!--  
+        <property name="hibernate.connection.datasource">java:comp/env/jdbc/TalentosDS</property>
+        -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <property name="hibernate.connection.username">user_bt</property>
+        <property name="hibernate.connection.password">senha_bt</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost/bancotalentos?autoReconnect=true&amp;relaxAutoCommit=true</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+
+        <substituicao chave="funcaoBDConverterStringEmData">STR_TO_DATE({0}, '%d/%m/%Y')</substituicao>
+        <substituicao chave="funcaoBDRemoverHorasDeData">STR_TO_DATE(DATE_FORMAT({0}, '%d/%m/%Y'), '%d/%m/%Y')</substituicao>
+
+        <substituicao chave="queryConsultaTimeStampBD">SELECT NOW() as timestamp</substituicao>
+
+        <moduloMapeamento nomeArquivo="BancoTalentosApoio-hibernate.xml" caminhoRelativo="BancoTalentosApoio/hibernate-config/"/>
+        <moduloMapeamento nomeArquivo="BancoTalentosGestao-hibernate.xml" caminhoRelativo="BancoTalentosGestao/hibernate-config/"/>
+
+        <moduloMapeamento nomeArquivo="Seguranca-hibernate.xml" caminhoRelativo="Autenticacao/hibernate-config/"/>
+    </conexao>
+    
+</persistencia-configuracao>

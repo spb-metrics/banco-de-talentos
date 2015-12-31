@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+<form-beans>
+<form-bean name="configuracaoLog" type="br.gov.camara.visao.comum.form.ConfiguracaoLogForm">
+</form-bean>
+<form-bean name="mensagemGlobal" type="br.gov.camara.visao.comum.form.MensagemGlobalForm">
+</form-bean>
+<form-bean name="sessoesAtivas" type="br.gov.camara.visao.comum.form.SessoesAtivasForm">
+</form-bean>
+</form-beans>
+<global-exceptions>
+<exception key="sigesp.comum.erro.globalexception" type="java.lang.Exception" bundle="comum" path="/encaminharErro.do" scope="request" handler="sigesp.comum.util.exception.GlobalExceptionHandler"/>
+</global-exceptions>
+<global-forwards>
+<forward name="encaminharLogon" path="/encaminharLogon.do"/>
+<forward name="encaminharLogoff" path="/encaminharLogoff.do"/>
+<forward name="encaminharErro" path="/encaminharErro.do"/>
+<forward name="encaminharUsuarioNaoAutorizado" path="/encaminharUsuarioNaoAutorizado.do"/>
+</global-forwards>
+<action-mappings>
+<action path="/encaminharLogon" type="sigesp.comum.util.struts.actions.RedirAcao">
+<forward name="sucesso" path="/encaminharLogon.do" module="/Autenticacao" redirect="true"/>
+</action>
+<action path="/encaminharLogoff" type="sigesp.comum.util.struts.actions.RedirAcao">
+<forward name="sucesso" path="/encaminharLogoff.do" module="/Autenticacao" redirect="true"/>
+</action>
+<action path="/encaminharErro" forward="sigesp.comum.erro"/>
+<action path="/encaminharUsuarioNaoAutorizado" forward="sigesp.comum.usuarionaoautorizado"/>
+<action path="/encaminharAvisoJavaScript" forward="sigesp.comum.avisojavascript"/>
+<action path="/indexComum" forward="visao.comum.indexcomum"/>
+<action path="/redirecionamentoSistemaNaoUtilizar" forward="visao.comum.redirecionamentosistema"/>
+<action path="/validarAutenticacaoExterna" forward="visao.comum.validar"/>
+<action path="/avisarJavaScriptConfiguracaoLog" type="sigesp.comum.util.struts.actions.RedirAcao" input="visao.comum.configuracaolog" name="configuracaoLog" scope="request" validate="false">
+<forward name="sucesso" path="/encaminharAvisoJavaScript.do"/>
+</action>
+<action path="/avisarJavaScriptMensagemGlobal" type="sigesp.comum.util.struts.actions.RedirAcao" input="visao.comum.mensagemglobal" name="mensagemGlobal" scope="request" validate="false">
+<forward name="sucesso" path="/encaminharAvisoJavaScript.do"/>
+</action>
+<action path="/avisarJavaScriptSessoesAtivas" type="sigesp.comum.util.struts.actions.RedirAcao" input="visao.comum.sessoesativas" name="sessoesAtivas" scope="request" validate="false">
+<forward name="sucesso" path="/encaminharAvisoJavaScript.do"/>
+</action>
+<action path="/configuracaoLogEfetuarAlteracao" type="br.gov.camara.visao.comum.action.ConfiguracaoLogAction" input="/configuracaoLogPrepararVisualizacao.do" name="configuracaoLog" scope="request" validate="false" parameter="ConfiguracaoLog">
+<forward name="sucesso" path="/configuracaoLogPrepararVisualizacao.do"/>
+</action>
+<action path="/configuracaoLogEfetuarExclusao" type="br.gov.camara.visao.comum.action.ConfiguracaoLogAction" input="/configuracaoLogPrepararVisualizacao.do" name="configuracaoLog" scope="request" validate="false" parameter="ConfiguracaoLog">
+<forward name="sucesso" path="/configuracaoLogPrepararVisualizacao.do"/>
+</action>
+<action path="/configuracaoLogEfetuarInclusao" type="br.gov.camara.visao.comum.action.ConfiguracaoLogAction" input="/configuracaoLogPrepararVisualizacao.do" name="configuracaoLog" scope="request" validate="true" parameter="ConfiguracaoLog">
+<forward name="sucesso" path="/configuracaoLogPrepararVisualizacao.do"/>
+</action>
+<action path="/configuracaoLogPrepararVisualizacao" type="br.gov.camara.visao.comum.action.ConfiguracaoLogAction" input="visao.comum.indexcomum" name="configuracaoLog" scope="request" validate="false" parameter="ConfiguracaoLog">
+<forward name="sucesso" path="visao.comum.configuracaolog"/>
+</action>
+<action path="/exclusaoSessaoAtivaPrepararConfirmacao" type="br.gov.camara.visao.comum.action.SessoesAtivasAction" input="/sessoesAtivasPrepararVisualizacao.do" name="sessoesAtivas" scope="request" validate="false" parameter="SessoesAtivas">
+<forward name="sucesso" path="visao.comum.exclusaosessaoativa"/>
+</action>
+<action path="/mensagemGlobalEfetuarAlteracao" type="br.gov.camara.visao.comum.action.MensagemGlobalAction" input="/mensagemGlobalPrepararVisualizacao.do" name="mensagemGlobal" scope="request" validate="false" parameter="MensagemGlobal">
+<forward name="sucesso" path="/mensagemGlobalPrepararVisualizacao.do"/>
+</action>
+<action path="/mensagemGlobalPrepararVisualizacao" type="br.gov.camara.visao.comum.action.MensagemGlobalAction" input="visao.comum.indexcomum" name="mensagemGlobal" scope="request" validate="false" parameter="MensagemGlobal">
+<forward name="sucesso" path="visao.comum.mensagemglobal"/>
+</action>
+<action path="/redirecionamentoSistemaEncaminharSigespW" type="br.gov.camara.visao.comum.action.RedirecionamentoSistemaAction" input="visao.comum.redirecionamentosistema">
+<forward name="sucesso" path="/redirecionamentoSistemaEncaminharSistema.do"/>
+</action>
+<action path="/redirecionamentoSistemaEncaminharSistema" type="br.gov.camara.visao.comum.action.RedirecionamentoSistemaAction" input="visao.comum.redirecionamentosistema"/>
+<action path="/sessoesAtivasEfetuarExclusao" type="br.gov.camara.visao.comum.action.SessoesAtivasAction" input="visao.comum.exclusaosessaoativa">
+<forward name="sucesso" path="/sessoesAtivasPrepararVisualizacao.do"/>
+</action>
+<action path="/sessoesAtivasPrepararVisualizacao" type="br.gov.camara.visao.comum.action.SessoesAtivasAction" input="visao.comum.indexcomum" name="sessoesAtivas" scope="request" validate="false" parameter="SessoesAtivas">
+<forward name="sucesso" path="visao.comum.sessoesativas"/>
+</action>
+<action path="/versaoPrepararVisualizacao" type="br.gov.camara.visao.comum.action.VersaoAction" input="visao.comum.indexcomum">
+<forward name="sucesso" path="visao.comum.versao"/>
+</action>
+</action-mappings>
+<controller processorClass="br.gov.camara.util.actionplugin.ActionPlugInTilesRequestProcessor"/>
+<message-resources parameter="resources.Comum"/>
+<message-resources parameter="resources.Comum" key="comum"/>
+<plug-in className="br.gov.camara.util.actionplugin.ActionPlugInPlugIn">
+<set-property property="configFile" value="/WEB-INF/config/projeto/action-plug-in/action-plug-in-config.xml"/>
+<set-property property="configDTD" value="/WEB-INF/config/Comum/action-plug-in/action-plug-in-config_1_0.dtd"/>
+</plug-in>
+<plug-in className="org.apache.struts.tiles.TilesPlugin">
+<set-property property="definitions-parser-validate" value="true"/>
+<set-property property="moduleAware" value="true"/>
+<set-property property="definitions-config" value="/WEB-INF/config/Comum/tiles-defs/Comum-tiles.xml"/>
+</plug-in>
+<plug-in className="br.gov.camara.util.strutsmenu.MenuPlugInCD">
+<set-property property="menuConfig" value="/WEB-INF/config/projeto/menu-config/ModulosLogados-menu.xml"/>
+</plug-in>
+<plug-in className="br.gov.camara.util.locale.LocalePlugIn">
+<set-property property="linguagem" value="pt"/>
+<set-property property="pais" value="BR"/>
+</plug-in>
+<plug-in className="sigesp.comum.util.hibernate.HibernatePlugIn"/>
+</struts-config>
+

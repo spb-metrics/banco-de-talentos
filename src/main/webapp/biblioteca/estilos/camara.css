@@ -1,0 +1,301 @@
+@IMPORT url("displaytag.css");
+@IMPORT url("menu.css");
+@IMPORT url("layout.css");
+
+/* links */
+a {
+	color: #2a2279;
+	text-decoration: none;
+}
+
+a img {
+	cursor: pointer;
+	border: 0;
+}
+
+a:link {
+	color: #2a2279;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #8e0a00;
+	text-decoration: none;
+}
+
+a:active {
+	color: #8e0a00;
+	text-decoration: none;
+}
+
+a:visited { /*color: none;*/
+	text-decoration: none;
+}
+
+/* elementos de formulario */
+textarea,input,select {
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #434343;
+	/*text-transform: uppercase;
+	border: solid;
+	border-width: thin;
+	border-color: #A0ACB8;*/
+}
+
+input[disabled],textarea[disabled],input.disabled,textarea.disabled {
+	background-color: #FFFFE6;
+}
+
+input[readonly],textarea[readonly],input.readonly,textarea.readonly {
+	background-color: #eeffee;
+}
+
+.rolagem {
+	scrollbar-face-color: #FFFFFF;
+	scrollbar-highlight-color: #FFFFFF;
+	scrollbar-3dlight-color: #FFFFFF;
+	scrollbar-darkshadow-color: #FFFFFF;
+	scrollbar-shadow-color: #FFFFFF;
+	scrollbar-arrow-color: #FFFFFF;
+	scrollbar-track-color: #FFFFFF;
+}
+
+label.tituloTabela {
+	font-style: italic;
+	color: #000000;
+	font-size: 13px;
+}
+
+.titulo	{
+	font-weight: bold;
+	font-size: 14px;
+	height: 20px;
+	text-align: center;
+	display: block;
+}
+
+.tooltip {
+	cursor: help;
+}
+
+.domTT
+{
+    border-right: black 1px solid;
+    border-top: black 1px solid;
+    border-left: black 1px solid;
+    border-bottom: black 1px solid;
+    background-color: infobackground;
+}
+
+.domTT .caption
+{
+    padding-right: 2px;
+    padding-left: 2px;
+    font-weight: bold;
+    font-size: 12px;
+    padding-bottom: 1px;
+    padding-top: 1px;
+    font-style: italic;
+    font-family: serif;
+}
+
+.domTT .contents
+{
+    padding-right: 2px;
+    padding-left: 2px;
+    font-size: 12px;
+    padding-bottom: 0px;
+    color: infotext;
+    padding-top: 1px;
+    font-family: Arial, sans-serif;
+}
+
+span.campoObrigatorio {
+	font-weight: bold;
+}
+
+/* elementos de tabelas */
+table.detalhe,table.listagem,table.exclusao,table.consulta,table.popup {
+	border: 1px;
+	border-style: solid;
+	border-color: white;
+	background-color: #e0e0e0;
+	width: 100%;
+}
+
+thead {
+	background-color: #bfbfbf;
+	font-weight: bold;
+	font-size: 11px;
+	height: 20px;
+}
+
+.tableCellHeader, .tableCellHeaderButton, .tituloTabelaListagem, .tituloTabelaDetalhe, .tituloTabelaExclusao, .tituloTabelaConsulta, .tituloTabelaPopup	{
+	background-color: #e0e0e0;
+	font-weight: bold;
+	font-size: 14px;
+	height: 20px;
+}
+
+/* Botões com imagem no título de uma tabela */
+.tableCellHeaderButton {
+	border: 1px;
+	border-style: outset;
+	border-color: buttonshadow;
+	background-color: buttonface;
+	text-align: center;
+	font-size: 12px;
+	width: 15%;
+}
+
+.tableCellHeaderButton a {
+	display: block;
+}
+
+.tableCellHeaderButton a:hover {
+	background-color: #aaaaaa;
+	color: white;
+}
+
+/* Botões do tipo button, submit, reset na página */
+.trBotoes {
+	text-align: center;
+}
+
+/* Botões do tipo imagem */
+.BotaoImg {
+	cursor: pointer;
+}
+
+tr.trDetalhePar,tr.trConsultaPar,trListagemPar {
+	background-color: #f0f0f0;
+}
+
+tr.trDetalheImpar,tr.trConsultaImpar,trListagemImpar {
+	background-color: #f1f1f1;
+}
+
+tr.trConsultaPar,tr.trConsultaImpar {
+	height: 20px;
+}
+
+tr.displayTag {
+	background-color: #ffffff;
+}
+
+td {
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	color: #434343;
+}
+
+p.voltar {
+	text-align: center;
+	padding-top: 10px;
+	width: 759px;
+}
+
+.fundoListagem,.fundoDisplayTag {
+	background-color: #efefef;
+}
+
+.fundoExclusao {
+	background-color: #ffffff;
+}
+
+.instrucoesPopup {
+    text-align: justify;
+	font-size: 12px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+}
+
+/* *** Início: Log4J configuration */
+table.log4jtable { 
+    border-collapse:collapse; 
+    border: 1px solid #e0e0e0; 
+    white-space: nowrap; 
+    text-align: left; 
+    width: 90%
+}
+
+table.log4jtable, table.log4jtable td { 
+    border-collapse:collapse; 
+    border: 1px solid #e0e0e0; 
+    white-space: nowrap; 
+}
+
+table.log4jtable thead tr th {
+    background-color: #c4c4c4;
+    border: 1px solid #e0e0e0; 
+    padding: 2px; 
+    text-align: center;
+    font-weight: bold;
+}
+
+form.log4jtable {
+    margin:0;
+    padding:0; 
+}
+/* --- Fim: Log4J configuration table */
+
+/* Filtro Servidor */
+table.filtroServidor {
+	background-color: #e0e0e0;
+	border: 0;
+}
+
+tr.filtroServidor {
+	background-color: #efefef;
+}
+
+tr.filtroServidor td, tr.filtroDependente td{
+	padding: 1px;
+}
+
+tr.filtroDependente {
+	background-color: #eaeaea;
+}
+span.filtroServidor, span.filtroDependente {
+	font-weight: bold;
+	font-style: italic;
+}
+
+input.filtroServidor {
+	border: solid;
+	border-width: 1px;
+	border-color: #A0ACB8;
+}
+
+.tituloAjudaTela {
+  color: #000099;
+  font-style: italic;
+  position: relative;
+}
+
+.ajudaTela {
+  padding-bottom: 5px;
+  visibility: hidden;
+  position: absolute;
+}
+
+div#tipDiv {
+  position:absolute; 
+  visibility:hidden; 
+  left:0; 
+  top:0; 
+  z-index:10000;
+  background-color:#dee7f7; 
+  border:1px solid #337;
+  padding:2px;
+  color:#000; 
+  font-size:11px; 
+  line-height:1.2;
+}
+
+.listaNumerada {
+	line-height: 30px;
+}

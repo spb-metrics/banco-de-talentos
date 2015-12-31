@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<MenuConfig>
+    <Displayers>
+        <Displayer name="SigespCoolMenu"
+                   type="br.gov.camara.util.strutsmenu.ExtendedCoolMenuDisplayer"/>
+    </Displayers>
+    <Menus>
+        <Menu name="mnuModulosLogado" title="Módulos">
+            <Item name="itmIndexBancoTalentosGestao" title="Talentos"
+                toolTip="Gestão dos Talentos"
+                page="/BancoTalentosGestao/indexBancoTalentosGestao.do">
+            </Item>
+            <Item name="itmIndexBancoTalentosApoio"
+                title="Manutenção do BT"
+                toolTip="Manutenção do Banco de Talentos"
+                page="/BancoTalentosApoio/indexBancoTalentosApoio.do">
+            </Item>
+            <!--  -->
+        </Menu>
+    </Menus>
+</MenuConfig>

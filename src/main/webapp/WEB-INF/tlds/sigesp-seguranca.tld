@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib
+ PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN"
+ "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+
+<!-- Tag Library Descriptor -->
+
+<taglib>
+
+  <tlibversion>1.0</tlibversion>
+  <jspversion>1.1</jspversion>
+  <shortname>sigesp</shortname>
+  <info>
+    Sigesp Tag Library
+  </info>
+
+  <tag>
+    <name>autorizacao</name>
+    <tagclass>sigesp.comum.util.seguranca.AutorizacaoTag</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <info>Permite exibir um conteúdo de acordo com a autorizacao do usuário logado</info>
+    <attribute>
+      <name>objetoControlado</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+</taglib>

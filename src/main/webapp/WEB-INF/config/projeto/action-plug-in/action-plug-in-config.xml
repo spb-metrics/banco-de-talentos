@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE action-plug-in-config
+  PUBLIC "-//ASQdotCOM//DTD Struts Action Plug-In Extension 1.0//EN"
+  "http://www.asqdotcom.be/struts/action-plug-in-config_1_0.dtd">
+<action-plug-in-config>
+    <action-plug-in>
+        <class>br.gov.camara.util.actionplugin.plugin.SegurancaActionPlugIn</class>
+        <disabled-for>
+            <action-path>/indexSigesp</action-path>
+            <action-path>/encaminharLogon</action-path>
+            <action-path>/encaminharLogoff</action-path>
+            <action-path>/validarAutenticacaoExterna</action-path>
+            <action-path>/encaminharErro</action-path>
+            <action-path>/encaminharUsuarioNaoAutorizado</action-path>
+            <action-path>/encaminharAvisoJavaScript</action-path>
+            <action-path>/validarLogonEfetuarLogon</action-path>
+			<action-path>/validarLogonEncaminharModulo</action-path>
+        </disabled-for>
+    </action-plug-in>
+</action-plug-in-config>

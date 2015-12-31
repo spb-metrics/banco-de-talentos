@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+<!--***************************************************************************-->
+<!--Definições da aplicação BancoTalentosApoio                                 -->
+<!--***************************************************************************-->
+<!--PAGINA - Definicoes das paginas da aplicacao BancoTalentosApoio-->
+<definition name="visao.bancotalentosapoio.atributotalento" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Atributos de talento"/>
+<put name="idPagina" value=""/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosApoio/javascript/atributoTalento.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosApoio/atributoTalento.jsp"/>
+</definition>
+<definition name="visao.bancotalentosapoio.atributotalentoopcao" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Opções de atributo de talento"/>
+<put name="idPagina" value=""/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosApoio/javascript/atributoTalentoOpcao.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosApoio/atributoTalentoOpcao.jsp"/>
+</definition>
+<definition name="visao.bancotalentosapoio.categoriaatributotalento" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Atributos de categoria de talento"/>
+<put name="idPagina" value=""/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosApoio/javascript/categoriaAtributoTalento.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosApoio/categoriaAtributoTalento.jsp"/>
+</definition>
+<definition name="visao.bancotalentosapoio.categoriatalento" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Categorias de talento"/>
+<put name="idPagina" value=""/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosApoio/javascript/categoriaTalento.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosApoio/categoriaTalento.jsp"/>
+</definition>
+<definition name="visao.bancotalentosapoio.consultausuario" extends="sigesp.layout.paginas.popup">
+<put name="titulo" value="Consulta de Usuários"/>
+<put name="idPagina" value=""/>
+<put name="direcionadorAcao" value="/WEB-INF/paginas/BancoTalentosApoio/direcionadoresAcao/consultaUsuario.js"/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosApoio/javascript/consultaUsuario.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosApoio/consultaUsuario.jsp"/>
+</definition>
+<definition name="visao.bancotalentosapoio.detalheatributotalento" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Detalhe de atributo de talento"/>
+<put name="idPagina" value=""/>
+<put name="direcionadorAcao" value="/WEB-INF/paginas/BancoTalentosApoio/direcionadoresAcao/detalheAtributoTalento.js"/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosApoio/javascript/detalheAtributoTalento.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosApoio/detalheAtributoTalento.jsp"/>
+</definition>
+<definition name="visao.bancotalentosapoio.detalheatributotalentoopcao" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Detalhe de opção de atributo de talento"/>
+<put name="idPagina" value=""/>
+<put name="direcionadorAcao" value="/WEB-INF/paginas/BancoTalentosApoio/direcionadoresAcao/detalheAtributoTalentoOpcao.js"/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosApoio/javascript/detalheAtributoTalentoOpcao.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosApoio/detalheAtributoTalentoOpcao.jsp"/>
+</definition>
+<definition name="visao.bancotalentosapoio.detalhecategoriaatributotalento" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Detalhe de atributo de categoria de talento"/>
+<put name="idPagina" value=""/>
+<put name="direcionadorAcao" value="/WEB-INF/paginas/BancoTalentosApoio/direcionadoresAcao/detalheCategoriaAtributoTalento.js"/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosApoio/javascript/detalheCategoriaAtributoTalento.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosApoio/detalheCategoriaAtributoTalento.jsp"/>
+</definition>
+<definition name="visao.bancotalentosapoio.detalhecategoriatalento" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Detalhe de categoria de talento"/>
+<put name="idPagina" value=""/>
+<put name="direcionadorAcao" value="/WEB-INF/paginas/BancoTalentosApoio/direcionadoresAcao/detalheCategoriaTalento.js"/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosApoio/javascript/detalheCategoriaTalento.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosApoio/detalheCategoriaTalento.jsp"/>
+</definition>
+<definition name="visao.bancotalentosapoio.detalhefiltroconsulta" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Detalhe de Filtro de Consulta"/>
+<put name="idPagina" value=""/>
+<put name="direcionadorAcao" value="/WEB-INF/paginas/BancoTalentosApoio/direcionadoresAcao/detalheFiltroConsulta.js"/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosApoio/javascript/detalheFiltroConsulta.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosApoio/detalheFiltroConsulta.jsp"/>
+</definition>
+<definition name="visao.bancotalentosapoio.detalhefiltroconsultausuario" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Detalhe do Filtro de consulta de usuário"/>
+<put name="idPagina" value=""/>
+<put name="direcionadorAcao" value="/WEB-INF/paginas/BancoTalentosApoio/direcionadoresAcao/detalheFiltroConsultaUsuario.js"/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosApoio/javascript/detalheFiltroConsultaUsuario.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosApoio/detalheFiltroConsultaUsuario.jsp"/>
+</definition>
+<definition name="visao.bancotalentosapoio.detalhetipofiltroconsulta" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Detalhe de tipos de filtro de consulta"/>
+<put name="idPagina" value=""/>
+<put name="direcionadorAcao" value="/WEB-INF/paginas/BancoTalentosApoio/direcionadoresAcao/detalheTipoFiltroConsulta.js"/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosApoio/javascript/detalheTipoFiltroConsulta.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosApoio/detalheTipoFiltroConsulta.jsp"/>
+</definition>
+<definition name="visao.bancotalentosapoio.exclusaoatributotalento" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Exclusão de atributo de talento"/>
+<put name="idPagina" value=""/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosApoio/javascript/exclusaoAtributoTalento.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosApoio/exclusaoAtributoTalento.jsp"/>
+</definition>
+<definition name="visao.bancotalentosapoio.exclusaoatributotalentoopcao" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Exclusão de opção de atributo de talento"/>
+<put name="idPagina" value=""/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosApoio/javascript/exclusaoAtributoTalentoOpcao.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosApoio/exclusaoAtributoTalentoOpcao.jsp"/>
+</definition>
+<definition name="visao.bancotalentosapoio.exclusaocategoriaatributotalento" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Exclusão de atributo de categoria de talento"/>
+<put name="idPagina" value=""/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosApoio/javascript/exclusaoCategoriaAtributoTalento.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosApoio/exclusaoCategoriaAtributoTalento.jsp"/>
+</definition>
+<definition name="visao.bancotalentosapoio.exclusaocategoriatalento" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Exclusão de categoria de talento"/>
+<put name="idPagina" value=""/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosApoio/javascript/exclusaoCategoriaTalento.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosApoio/exclusaoCategoriaTalento.jsp"/>
+</definition>
+<definition name="visao.bancotalentosapoio.exclusaofiltroconsulta" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Exclusão de Filtro de Consulta"/>
+<put name="idPagina" value=""/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosApoio/javascript/exclusaoFiltroConsulta.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosApoio/exclusaoFiltroConsulta.jsp"/>
+</definition>
+<definition name="visao.bancotalentosapoio.exclusaofiltroconsultausuario" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Exclusão do Filtro de consulta de usuário"/>
+<put name="idPagina" value=""/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosApoio/javascript/exclusaoFiltroConsultaUsuario.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosApoio/exclusaoFiltroConsultaUsuario.jsp"/>
+</definition>
+<definition name="visao.bancotalentosapoio.exclusaotipofiltroconsulta" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Exclusão de tipo de filtro consulta"/>
+<put name="idPagina" value=""/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosApoio/javascript/exclusaoTipoFiltroConsulta.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosApoio/exclusaoTipoFiltroConsulta.jsp"/>
+</definition>
+<definition name="visao.bancotalentosapoio.filtroconsulta" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Filtro de Consulta"/>
+<put name="idPagina" value=""/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosApoio/javascript/filtroConsulta.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosApoio/filtroConsulta.jsp"/>
+</definition>
+<definition name="visao.bancotalentosapoio.filtroconsultagrupo" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Filtro de consulta de grupo"/>
+<put name="idPagina" value=""/>
+<put name="direcionadorAcao" value="/WEB-INF/paginas/BancoTalentosApoio/direcionadoresAcao/filtroConsultaGrupo.js"/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosApoio/javascript/filtroConsultaGrupo.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosApoio/filtroConsultaGrupo.jsp"/>
+</definition>
+<definition name="visao.bancotalentosapoio.filtroconsultausuario" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Filtro de consulta de usuário"/>
+<put name="idPagina" value=""/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosApoio/javascript/filtroConsultaUsuario.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosApoio/filtroConsultaUsuario.jsp"/>
+</definition>
+<definition name="visao.bancotalentosapoio.indexbancotalentosapoio" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Manutenção do BT"/>
+<put name="idPagina" value=""/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosApoio/javascript/indexBancoTalentosApoio.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosApoio/indexBancoTalentosApoio.jsp"/>
+</definition>
+<definition name="visao.bancotalentosapoio.ordenacaocategoriaatributotalento" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Ordenação de atributos de categoria de talento"/>
+<put name="idPagina" value=""/>
+<put name="direcionadorAcao" value="/WEB-INF/paginas/BancoTalentosApoio/direcionadoresAcao/ordenacaoCategoriaAtributoTalento.js"/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosApoio/javascript/ordenacaoCategoriaAtributoTalento.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosApoio/ordenacaoCategoriaAtributoTalento.jsp"/>
+</definition>
+<definition name="visao.bancotalentosapoio.ordenacaocategoriatalento" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Ordenação de categorias de talento"/>
+<put name="idPagina" value=""/>
+<put name="direcionadorAcao" value="/WEB-INF/paginas/BancoTalentosApoio/direcionadoresAcao/ordenacaoCategoriaTalento.js"/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosApoio/javascript/ordenacaoCategoriaTalento.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosApoio/ordenacaoCategoriaTalento.jsp"/>
+</definition>
+<definition name="visao.bancotalentosapoio.tipofiltroconsulta" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Tipos de Filtro de Consulta"/>
+<put name="idPagina" value=""/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosApoio/javascript/tipoFiltroConsulta.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosApoio/tipoFiltroConsulta.jsp"/>
+</definition>
+<!-- INICIO - Lucene no Banco de Talentos -->
+<definition name="visao.bancotalentosapoio.alteragrupousuario" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Manutenção do BT"/>
+<put name="idPagina" value=""/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosApoio/javascript/indexBancoTalentosApoio.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosApoio/alteraGrupoUsuario.jsp"/>
+</definition>
+<definition name="visao.bancotalentosapoio.gerenciarlucene" extends="sigesp.layout.paginas.padrao">
+<put name="titulo" value="Manutenção do BT"/>
+<put name="idPagina" value=""/>
+<put name="javascriptPagina" value="/WEB-INF/paginas/BancoTalentosApoio/javascript/indexBancoTalentosApoio.js"/>
+<put name="corpo" value="/WEB-INF/paginas/BancoTalentosApoio/gerenciarLucene.jsp"/>
+</definition>
+<!-- FIM - Lucene no Banco de Talentos -->
+</tiles-definitions>
+

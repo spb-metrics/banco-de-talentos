@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="br.gov.camara.negocio.bancotalentos.pojo.Pessoa" table="SIGESPPESSOAL" lazy="true">
+		<id name="identificador" column="idePessoal" type="java.lang.Integer">
+            <generator class="assigned"/>
+		</id>
+		<property name="nome" column="nomPessoal" not-null="true" type="java.lang.String"/>
+		<property name="dataNascimento" column="datNascimento" not-null="true" type="java.util.Calendar"/>
+		<property name="sexo" column="indSexo" not-null="true" type="java.lang.String"/>
+		<property name="cpf" column="numCpf" not-null="false" type="java.lang.String"/>
+		<property name="rg" column="numRg" not-null="false" type="java.lang.String"/>
+		<many-to-one name="grupo" class="br.gov.camara.negocio.autenticacaoperfil.pojo.Grupo" column="codGrupo" not-null="false"/>
+        <set name="lotacoes" order-by="datInicio" lazy="true">
+        	<key column="idePessoal"/>
+        	<one-to-many class="br.gov.camara.negocio.bancotalentos.pojo.Lotacao"/>
+    	</set> 
+	</class>
+</hibernate-mapping>

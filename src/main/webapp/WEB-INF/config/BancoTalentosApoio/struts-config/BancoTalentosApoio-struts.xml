@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+<form-beans>
+<form-bean name="consultaUsuario" type="br.gov.camara.visao.bancotalentosapoio.form.ConsultaUsuarioForm">
+</form-bean>
+<form-bean name="detalheAtributoTalento" type="br.gov.camara.visao.bancotalentosapoio.form.DetalheAtributoTalentoForm">
+</form-bean>
+<form-bean name="detalheAtributoTalentoOpcao" type="br.gov.camara.visao.bancotalentosapoio.form.DetalheAtributoTalentoOpcaoForm">
+</form-bean>
+<form-bean name="detalheCategoriaAtributoTalento" type="br.gov.camara.visao.bancotalentosapoio.form.DetalheCategoriaAtributoTalentoForm">
+</form-bean>
+<form-bean name="detalheCategoriaTalento" type="br.gov.camara.visao.bancotalentosapoio.form.DetalheCategoriaTalentoForm">
+</form-bean>
+<form-bean name="detalheFiltroConsulta" type="br.gov.camara.visao.bancotalentosapoio.form.DetalheFiltroConsultaForm">
+</form-bean>
+<form-bean name="detalheFiltroConsultaUsuario" type="br.gov.camara.visao.bancotalentosapoio.form.DetalheFiltroConsultaUsuarioForm">
+</form-bean>
+<form-bean name="detalheTipoFiltroConsulta" type="br.gov.camara.visao.bancotalentosapoio.form.DetalheTipoFiltroConsultaForm">
+</form-bean>
+<form-bean name="filtroConsultaGrupo" type="br.gov.camara.visao.bancotalentosapoio.form.FiltroConsultaGrupoForm">
+</form-bean>
+<form-bean name="ordenacaoCategoriaAtributoTalento" type="br.gov.camara.visao.bancotalentosapoio.form.OrdenacaoCategoriaAtributoTalentoForm">
+</form-bean>
+<form-bean name="ordenacaoCategoriaTalento" type="br.gov.camara.visao.bancotalentosapoio.form.OrdenacaoCategoriaTalentoForm">
+</form-bean>
+</form-beans>
+<global-exceptions>
+<exception key="sigesp.comum.erro.globalexception" type="java.lang.Exception" bundle="comum" path="/encaminharErro.do" scope="request" handler="sigesp.comum.util.exception.GlobalExceptionHandler"/>
+</global-exceptions>
+<global-forwards>
+<forward name="encaminharLogon" path="/encaminharLogon.do"/>
+<forward name="encaminharLogoff" path="/encaminharLogoff.do"/>
+<forward name="encaminharErro" path="/encaminharErro.do"/>
+<forward name="encaminharUsuarioNaoAutorizado" path="/encaminharUsuarioNaoAutorizado.do"/>
+</global-forwards>
+<action-mappings>
+<action path="/encaminharLogon" type="sigesp.comum.util.struts.actions.RedirAcao">
+<forward name="sucesso" path="/encaminharLogon.do" module="/Autenticacao" redirect="true"/>
+</action>
+<action path="/encaminharLogoff" type="sigesp.comum.util.struts.actions.RedirAcao">
+<forward name="sucesso" path="/encaminharLogoff.do" module="/Autenticacao" redirect="true"/>
+</action>
+<action path="/encaminharErro" forward="sigesp.comum.erro"/>
+<action path="/encaminharUsuarioNaoAutorizado" forward="sigesp.comum.usuarionaoautorizado"/>
+<action path="/encaminharAvisoJavaScript" forward="sigesp.comum.avisojavascript"/>
+<action path="/bancoTalentosApoioInicioBancoTalentosApoioCadastrar" forward="visao.bancotalentosapoio.bancotalentosapoioiniciobancotalentosapoio"/>
+<action path="/consultaUsuarioPaginarListagem" forward="visao.bancotalentosapoio.consultausuario"/>
+<action path="/indexBancoTalentosApoio" forward="visao.bancotalentosapoio.indexbancotalentosapoio"/>
+<action path="/avisarJavaScriptConsultaUsuario" type="sigesp.comum.util.struts.actions.RedirAcao" input="visao.bancotalentosapoio.consultausuario" name="consultaUsuario" scope="request" validate="false">
+<forward name="sucesso" path="/encaminharAvisoJavaScript.do"/>
+</action>
+<action path="/avisarJavaScriptDetalheAtributoTalento" type="sigesp.comum.util.struts.actions.RedirAcao" input="visao.bancotalentosapoio.detalheatributotalento" name="detalheAtributoTalento" scope="request" validate="false">
+<forward name="sucesso" path="/encaminharAvisoJavaScript.do"/>
+</action>
+<action path="/avisarJavaScriptDetalheAtributoTalentoOpcao" type="sigesp.comum.util.struts.actions.RedirAcao" input="visao.bancotalentosapoio.detalheatributotalentoopcao" name="detalheAtributoTalentoOpcao" scope="request" validate="false">
+<forward name="sucesso" path="/encaminharAvisoJavaScript.do"/>
+</action>
+<action path="/avisarJavaScriptDetalheCategoriaAtributoTalento" type="sigesp.comum.util.struts.actions.RedirAcao" input="visao.bancotalentosapoio.detalhecategoriaatributotalento" name="detalheCategoriaAtributoTalento" scope="request" validate="false">
+<forward name="sucesso" path="/encaminharAvisoJavaScript.do"/>
+</action>
+<action path="/avisarJavaScriptDetalheCategoriaTalento" type="sigesp.comum.util.struts.actions.RedirAcao" input="visao.bancotalentosapoio.detalhecategoriatalento" name="detalheCategoriaTalento" scope="request" validate="false">
+<forward name="sucesso" path="/encaminharAvisoJavaScript.do"/>
+</action>
+<action path="/avisarJavaScriptDetalheFiltroConsulta" type="sigesp.comum.util.struts.actions.RedirAcao" input="visao.bancotalentosapoio.detalhefiltroconsulta" name="detalheFiltroConsulta" scope="request" validate="false">
+<forward name="sucesso" path="/encaminharAvisoJavaScript.do"/>
+</action>
+<action path="/avisarJavaScriptDetalheFiltroConsultaUsuario" type="sigesp.comum.util.struts.actions.RedirAcao" input="visao.bancotalentosapoio.detalhefiltroconsultausuario" name="detalheFiltroConsultaUsuario" scope="request" validate="false">
+<forward name="sucesso" path="/encaminharAvisoJavaScript.do"/>
+</action>
+<action path="/avisarJavaScriptDetalheTipoFiltroConsulta" type="sigesp.comum.util.struts.actions.RedirAcao" input="visao.bancotalentosapoio.detalhetipofiltroconsulta" name="detalheTipoFiltroConsulta" scope="request" validate="false">
+<forward name="sucesso" path="/encaminharAvisoJavaScript.do"/>
+</action>
+<action path="/avisarJavaScriptFiltroConsultaGrupo" type="sigesp.comum.util.struts.actions.RedirAcao" input="visao.bancotalentosapoio.filtroconsultagrupo" name="filtroConsultaGrupo" scope="request" validate="false">
+<forward name="sucesso" path="/encaminharAvisoJavaScript.do"/>
+</action>
+<action path="/avisarJavaScriptOrdenacaoCategoriaAtributoTalento" type="sigesp.comum.util.struts.actions.RedirAcao" input="visao.bancotalentosapoio.ordenacaocategoriaatributotalento" name="ordenacaoCategoriaAtributoTalento" scope="request" validate="false">
+<forward name="sucesso" path="/encaminharAvisoJavaScript.do"/>
+</action>
+<action path="/avisarJavaScriptOrdenacaoCategoriaTalento" type="sigesp.comum.util.struts.actions.RedirAcao" input="visao.bancotalentosapoio.ordenacaocategoriatalento" name="ordenacaoCategoriaTalento" scope="request" validate="false">
+<forward name="sucesso" path="/encaminharAvisoJavaScript.do"/>
+</action>
+<action path="/atributoTalentoEfetuarAlteracao" type="br.gov.camara.visao.bancotalentosapoio.action.AtributoTalentoAction" input="/detalheAtributoTalentoPrepararAlteracao.do" name="detalheAtributoTalento" scope="request" validate="true" parameter="DetalheAtributoTalento">
+<forward name="sucesso" path="/atributoTalentoPrepararVisualizacao.do"/>
+</action>
+<action path="/atributoTalentoEfetuarExclusao" type="br.gov.camara.visao.bancotalentosapoio.action.AtributoTalentoAction" input="/exclusaoAtributoTalentoPrepararExclusao.do">
+<forward name="sucesso" path="/atributoTalentoPrepararVisualizacao.do"/>
+</action>
+<!-- INICIO - Lucene no Banco de Talentos -->
+<action path="/gerenciarLucenePrepararVisualizacao" type="br.gov.camara.visao.bancotalentosapoio.action.GerenciarLuceneAction" >
+<forward name="sucesso" path="visao.bancotalentosapoio.gerenciarlucene"/>
+</action>
+<!-- Reutilizei um bean qualquer aqui-->
+<action path="/reindexarLucene"
+type="br.gov.camara.visao.bancotalentosapoio.action.GerenciarLuceneAction"
+input="visao.bancotalentosapoio.gerenciarlucene"
+name="consultaUsuario" 
+scope="request"
+validate="false">
+<forward name="sucesso" path="/gerenciarLucenePrepararVisualizacao.do"/>
+</action>
+<!-- FIM - Lucene no Banco de Talentos -->
+<action path="/atributoTalentoOpcaoEfetuarAlteracao" type="br.gov.camara.visao.bancotalentosapoio.action.AtributoTalentoOpcaoAction" input="/detalheAtributoTalentoOpcaoPrepararAlteracao.do" name="detalheAtributoTalentoOpcao" scope="request" validate="true" parameter="DetalheAtributoTalentoOpcao">
+<forward name="sucesso" path="/atributoTalentoOpcaoPrepararVisualizacao.do"/>
+</action>
+<action path="/atributoTalentoOpcaoEfetuarExclusao" type="br.gov.camara.visao.bancotalentosapoio.action.AtributoTalentoOpcaoAction" input="/exclusaoAtributoTalentoOpcaoPrepararExclusao.do">
+<forward name="sucesso" path="/atributoTalentoOpcaoPrepararVisualizacao.do"/>
+</action>
+<action path="/atributoTalentoOpcaoPrepararVisualizacao" type="br.gov.camara.visao.bancotalentosapoio.action.AtributoTalentoOpcaoAction" input="visao.bancotalentosapoio.atributotalento">
+<forward name="sucesso" path="visao.bancotalentosapoio.atributotalentoopcao"/>
+</action>
+<action path="/atributoTalentoPrepararVisualizacao" type="br.gov.camara.visao.bancotalentosapoio.action.AtributoTalentoAction" input="visao.bancotalentosapoio.indexbancotalentosapoio">
+<forward name="sucesso" path="visao.bancotalentosapoio.atributotalento"/>
+</action>
+<action path="/categoriaAtributoTalentoEfetuarAlteracao" type="br.gov.camara.visao.bancotalentosapoio.action.CategoriaAtributoTalentoAction" input="/detalheCategoriaAtributoTalentoPrepararAlteracao.do" name="detalheCategoriaAtributoTalento" scope="request" validate="true" parameter="DetalheCategoriaAtributoTalento">
+<forward name="sucesso" path="/categoriaAtributoTalentoPrepararVisualizacao.do"/>
+</action>
+<action path="/categoriaAtributoTalentoEfetuarExclusao" type="br.gov.camara.visao.bancotalentosapoio.action.CategoriaAtributoTalentoAction" input="/exclusaoCategoriaAtributoTalentoPrepararExclusao.do">
+<forward name="sucesso" path="/categoriaAtributoTalentoPrepararVisualizacao.do"/>
+</action>
+<action path="/categoriaAtributoTalentoEfetuarOrdenacao" type="br.gov.camara.visao.bancotalentosapoio.action.CategoriaAtributoTalentoAction" input="visao.bancotalentosapoio.ordenacaocategoriaatributotalento" name="ordenacaoCategoriaAtributoTalento" scope="request" validate="true" parameter="OrdenacaoCategoriaAtributoTalento">
+<forward name="sucesso" path="/categoriaAtributoTalentoPrepararVisualizacao.do"/>
+</action>
+<action path="/categoriaAtributoTalentoPrepararVisualizacao" type="br.gov.camara.visao.bancotalentosapoio.action.CategoriaAtributoTalentoAction" input="visao.bancotalentosapoio.categoriatalento">
+<forward name="sucesso" path="visao.bancotalentosapoio.categoriaatributotalento"/>
+</action>
+<action path="/categoriaTalentoEfetuarAlteracao" type="br.gov.camara.visao.bancotalentosapoio.action.CategoriaTalentoAction" input="/detalheCategoriaTalentoPrepararAlteracao.do" name="detalheCategoriaTalento" scope="request" validate="true" parameter="DetalheCategoriaTalento">
+<forward name="sucesso" path="/categoriaTalentoPrepararVisualizacao.do"/>
+</action>
+<action path="/categoriaTalentoEfetuarExclusao" type="br.gov.camara.visao.bancotalentosapoio.action.CategoriaTalentoAction" input="/exclusaoCategoriaTalentoPrepararExclusao.do">
+<forward name="sucesso" path="/categoriaTalentoPrepararVisualizacao.do"/>
+</action>
+<action path="/categoriaTalentoEfetuarOrdenacao" type="br.gov.camara.visao.bancotalentosapoio.action.CategoriaTalentoAction" input="/ordenacaoCategoriaTalentoPrepararVisualizacao.do" name="ordenacaoCategoriaTalento" scope="request" validate="true" parameter="OrdenacaoCategoriaTalento">
+<forward name="sucesso" path="/categoriaTalentoPrepararVisualizacao.do"/>
+</action>
+<action path="/categoriaTalentoPrepararVisualizacao" type="br.gov.camara.visao.bancotalentosapoio.action.CategoriaTalentoAction" input="visao.bancotalentosapoio.indexbancotalentosapoio">
+<forward name="sucesso" path="visao.bancotalentosapoio.categoriatalento"/>
+</action>
+<action path="/consultaUsuarioEfetuarConsulta" type="br.gov.camara.visao.bancotalentosapoio.action.ConsultaUsuarioAction" input="visao.bancotalentosapoio.consultausuario" name="consultaUsuario" scope="request" validate="true" parameter="ConsultaUsuario">
+<forward name="sucesso" path="visao.bancotalentosapoio.consultausuario"/>
+</action>
+<action path="/consultaUsuarioPrepararVisualizacao" type="br.gov.camara.visao.bancotalentosapoio.action.ConsultaUsuarioAction" input="/encaminharErro.do">
+<forward name="sucesso" path="visao.bancotalentosapoio.consultausuario"/>
+</action>
+<action path="/detalheAtributoTalentoEfetuarInclusao" type="br.gov.camara.visao.bancotalentosapoio.action.AtributoTalentoAction" input="/detalheAtributoTalentoPrepararInclusao.do" name="detalheAtributoTalento" scope="request" validate="true" parameter="DetalheAtributoTalento">
+<forward name="sucesso" path="/detalheAtributoTalentoPrepararInclusao.do"/>
+</action>
+<action path="/detalheAtributoTalentoOpcaoEfetuarInclusao" type="br.gov.camara.visao.bancotalentosapoio.action.AtributoTalentoOpcaoAction" input="/detalheAtributoTalentoOpcaoPrepararInclusao.do" name="detalheAtributoTalentoOpcao" scope="request" validate="true" parameter="DetalheAtributoTalentoOpcao">
+<forward name="sucesso" path="/detalheAtributoTalentoOpcaoPrepararInclusao.do"/>
+</action>
+<action path="/detalheAtributoTalentoOpcaoPrepararAlteracao" type="br.gov.camara.visao.bancotalentosapoio.action.AtributoTalentoOpcaoAction" input="visao.bancotalentosapoio.atributotalentoopcao" name="detalheAtributoTalentoOpcao" scope="request" validate="false" parameter="DetalheAtributoTalentoOpcao">
+<forward name="sucesso" path="/detalheAtributoTalentoOpcaoPrepararInclusao.do"/>
+</action>
+<action path="/detalheAtributoTalentoOpcaoPrepararInclusao" type="br.gov.camara.visao.bancotalentosapoio.action.AtributoTalentoOpcaoAction" input="visao.bancotalentosapoio.atributotalentoopcao" name="detalheAtributoTalentoOpcao" scope="request" validate="false" parameter="DetalheAtributoTalentoOpcao">
+<forward name="sucesso" path="visao.bancotalentosapoio.detalheatributotalentoopcao"/>
+</action>
+<action path="/detalheAtributoTalentoPrepararAlteracao" type="br.gov.camara.visao.bancotalentosapoio.action.AtributoTalentoAction" input="visao.bancotalentosapoio.atributotalento" name="detalheAtributoTalento" scope="request" validate="false" parameter="DetalheAtributoTalento">
+<forward name="sucesso" path="/detalheAtributoTalentoPrepararInclusao.do"/>
+</action>
+<action path="/detalheAtributoTalentoPrepararInclusao" type="br.gov.camara.visao.bancotalentosapoio.action.AtributoTalentoAction" input="visao.bancotalentosapoio.atributotalento" name="detalheAtributoTalento" scope="request" validate="false" parameter="DetalheAtributoTalento">
+<forward name="sucesso" path="visao.bancotalentosapoio.detalheatributotalento"/>
+</action>
+<action path="/detalheCategoriaAtributoTalentoEfetuarInclusao" type="br.gov.camara.visao.bancotalentosapoio.action.CategoriaAtributoTalentoAction" input="/detalheCategoriaAtributoTalentoPrepararInclusao.do" name="detalheCategoriaAtributoTalento" scope="request" validate="true" parameter="DetalheCategoriaAtributoTalento">
+<forward name="sucesso" path="/detalheCategoriaAtributoTalentoPrepararInclusao.do"/>
+</action>
+<action path="/detalheCategoriaAtributoTalentoPrepararAlteracao" type="br.gov.camara.visao.bancotalentosapoio.action.CategoriaAtributoTalentoAction" input="visao.bancotalentosapoio.categoriaatributotalento" name="detalheCategoriaAtributoTalento" scope="request" validate="false" parameter="DetalheCategoriaAtributoTalento">
+<forward name="sucesso" path="/detalheCategoriaAtributoTalentoPrepararInclusao.do"/>
+</action>
+<action path="/detalheCategoriaAtributoTalentoPrepararInclusao" type="br.gov.camara.visao.bancotalentosapoio.action.CategoriaAtributoTalentoAction" input="visao.bancotalentosapoio.categoriaatributotalento" name="detalheCategoriaAtributoTalento" scope="request" validate="false" parameter="DetalheCategoriaAtributoTalento">
+<forward name="sucesso" path="visao.bancotalentosapoio.detalhecategoriaatributotalento"/>
+</action>
+<action path="/detalheCategoriaTalentoEfetuarInclusao" type="br.gov.camara.visao.bancotalentosapoio.action.CategoriaTalentoAction" input="/detalheCategoriaTalentoPrepararInclusao.do" name="detalheCategoriaTalento" scope="request" validate="true" parameter="DetalheCategoriaTalento">
+<forward name="sucesso" path="/detalheCategoriaTalentoPrepararInclusao.do"/>
+</action>
+<action path="/detalheCategoriaTalentoPrepararAlteracao" type="br.gov.camara.visao.bancotalentosapoio.action.CategoriaTalentoAction" input="visao.bancotalentosapoio.categoriatalento" name="detalheCategoriaTalento" scope="request" validate="false" parameter="DetalheCategoriaTalento">
+<forward name="sucesso" path="/detalheCategoriaTalentoPrepararInclusao.do"/>
+</action>
+<action path="/detalheCategoriaTalentoPrepararInclusao" type="br.gov.camara.visao.bancotalentosapoio.action.CategoriaTalentoAction" input="visao.bancotalentosapoio.categoriatalento" name="detalheCategoriaTalento" scope="request" validate="false" parameter="DetalheCategoriaTalento">
+<forward name="sucesso" path="visao.bancotalentosapoio.detalhecategoriatalento"/>
+</action>
+<action path="/detalheFiltroConsultaEfetuarInclusao" type="br.gov.camara.visao.bancotalentosapoio.action.FiltroConsultaAction" input="/detalheFiltroConsultaPrepararInclusao.do" name="detalheFiltroConsulta" scope="request" validate="true" parameter="DetalheFiltroConsulta">
+<forward name="sucesso" path="/detalheFiltroConsultaPrepararInclusao.do"/>
+</action>
+<action path="/detalheFiltroConsultaPrepararAlteracao" type="br.gov.camara.visao.bancotalentosapoio.action.FiltroConsultaAction" input="/filtroConsultaPrepararVisualizacao.do" name="detalheFiltroConsulta" scope="request" validate="false" parameter="DetalheFiltroConsulta">
+<forward name="sucesso" path="/detalheFiltroConsultaPrepararInclusao.do"/>
+</action>
+<action path="/detalheFiltroConsultaPrepararInclusao" type="br.gov.camara.visao.bancotalentosapoio.action.FiltroConsultaAction" input="/filtroConsultaPrepararVisualizacao.do" name="detalheFiltroConsulta" scope="request" validate="false" parameter="DetalheFiltroConsulta">
+<forward name="sucesso" path="visao.bancotalentosapoio.detalhefiltroconsulta"/>
+</action>
+<action path="/detalheFiltroConsultaUsuarioEfetuarInclusao" type="br.gov.camara.visao.bancotalentosapoio.action.FiltroConsultaUsuarioAction" input="/detalheFiltroConsultaUsuarioPrepararInclusao.do" name="detalheFiltroConsultaUsuario" scope="request" validate="true" parameter="DetalheFiltroConsultaUsuario">
+<forward name="sucesso" path="/detalheFiltroConsultaUsuarioPrepararInclusao.do"/>
+</action>
+<action path="/detalheFiltroConsultaUsuarioPrepararInclusao" type="br.gov.camara.visao.bancotalentosapoio.action.FiltroConsultaUsuarioAction" input="/filtroConsultaUsuarioPrepararVisualizacao.do" name="detalheFiltroConsultaUsuario" scope="request" validate="false" parameter="DetalheFiltroConsultaUsuario">
+<forward name="sucesso" path="visao.bancotalentosapoio.detalhefiltroconsultausuario"/>
+</action>
+<action path="/detalheTipoFiltroConsultaEfetuarInclusao" type="br.gov.camara.visao.bancotalentosapoio.action.TipoFiltroConsultaAction" input="/detalheTipoFiltroConsultaPrepararInclusao.do" name="detalheTipoFiltroConsulta" scope="request" validate="true" parameter="DetalheTipoFiltroConsulta">
+<forward name="sucesso" path="/detalheTipoFiltroConsultaPrepararInclusao.do"/>
+</action>
+<action path="/detalheTipoFiltroConsultaPrepararAlteracao" type="br.gov.camara.visao.bancotalentosapoio.action.TipoFiltroConsultaAction" input="/tipoFiltroConsultaPrepararVisualizacao.do" name="detalheTipoFiltroConsulta" scope="request" validate="false" parameter="DetalheTipoFiltroConsulta">
+<forward name="sucesso" path="/detalheTipoFiltroConsultaPrepararInclusao.do"/>
+</action>
+<action path="/detalheTipoFiltroConsultaPrepararInclusao" type="br.gov.camara.visao.bancotalentosapoio.action.TipoFiltroConsultaAction" input="visao.bancotalentosapoio.tipofiltroconsulta" name="detalheTipoFiltroConsulta" scope="request" validate="false" parameter="DetalheTipoFiltroConsulta">
+<forward name="sucesso" path="visao.bancotalentosapoio.detalhetipofiltroconsulta"/>
+</action>
+<action path="/exclusaoAtributoTalentoOpcaoPrepararExclusao" type="br.gov.camara.visao.bancotalentosapoio.action.AtributoTalentoOpcaoAction" input="visao.bancotalentosapoio.atributotalentoopcao">
+<forward name="sucesso" path="visao.bancotalentosapoio.exclusaoatributotalentoopcao"/>
+</action>
+<action path="/exclusaoAtributoTalentoPrepararExclusao" type="br.gov.camara.visao.bancotalentosapoio.action.AtributoTalentoAction" input="visao.bancotalentosapoio.atributotalento">
+<forward name="sucesso" path="visao.bancotalentosapoio.exclusaoatributotalento"/>
+</action>
+<action path="/exclusaoCategoriaAtributoTalentoPrepararExclusao" type="br.gov.camara.visao.bancotalentosapoio.action.CategoriaAtributoTalentoAction" input="visao.bancotalentosapoio.categoriaatributotalento">
+<forward name="sucesso" path="visao.bancotalentosapoio.exclusaocategoriaatributotalento"/>
+</action>
+<action path="/exclusaoCategoriaTalentoPrepararExclusao" type="br.gov.camara.visao.bancotalentosapoio.action.CategoriaTalentoAction" input="visao.bancotalentosapoio.categoriatalento">
+<forward name="sucesso" path="visao.bancotalentosapoio.exclusaocategoriatalento"/>
+</action>
+<action path="/exclusaoFiltroConsultaPrepararExclusao" type="br.gov.camara.visao.bancotalentosapoio.action.FiltroConsultaAction" input="/filtroConsultaPrepararVisualizacao.do">
+<forward name="sucesso" path="visao.bancotalentosapoio.exclusaofiltroconsulta"/>
+</action>
+<action path="/exclusaoFiltroConsultaUsuarioPrepararExclusao" type="br.gov.camara.visao.bancotalentosapoio.action.FiltroConsultaUsuarioAction" input="/filtroConsultaUsuarioPrepararVisualizacao.do">
+<forward name="sucesso" path="visao.bancotalentosapoio.exclusaofiltroconsultausuario"/>
+</action>
+<action path="/exclusaoTipoFiltroConsultaPrepararExclusao" type="br.gov.camara.visao.bancotalentosapoio.action.TipoFiltroConsultaAction" input="/tipoFiltroConsultaPrepararVisualizacao.do">
+<forward name="sucesso" path="visao.bancotalentosapoio.exclusaotipofiltroconsulta"/>
+</action>
+<action path="/filtroConsultaEfetuarAlteracao" type="br.gov.camara.visao.bancotalentosapoio.action.FiltroConsultaAction" input="/detalheFiltroConsultaPrepararAlteracao.do" name="detalheFiltroConsulta" scope="request" validate="true" parameter="DetalheFiltroConsulta">
+<forward name="sucesso" path="/filtroConsultaPrepararVisualizacao.do"/>
+</action>
+<action path="/filtroConsultaEfetuarExclusao" type="br.gov.camara.visao.bancotalentosapoio.action.FiltroConsultaAction" input="/exclusaoFiltroConsultaPrepararExclusao.do">
+<forward name="sucesso" path="/filtroConsultaPrepararVisualizacao.do"/>
+</action>
+<action path="/filtroConsultaGrupoEfetuarAtualizacao" type="br.gov.camara.visao.bancotalentosapoio.action.FiltroConsultaGrupoAction" input="/filtroConsultaGrupoPrepararVisualizacao.do" name="filtroConsultaGrupo" scope="request" validate="true" parameter="FiltroConsultaGrupo">
+<forward name="sucesso" path="/filtroConsultaGrupoPrepararVisualizacao.do"/>
+</action>
+<action path="/filtroConsultaGrupoPrepararVisualizacao" type="br.gov.camara.visao.bancotalentosapoio.action.FiltroConsultaGrupoAction" input="/filtroConsultaPrepararVisualizacao.do" name="filtroConsultaGrupo" scope="request" validate="false" parameter="FiltroConsultaGrupo">
+<forward name="sucesso" path="visao.bancotalentosapoio.filtroconsultagrupo"/>
+</action>
+<action path="/filtroConsultaPrepararVisualizacao" type="br.gov.camara.visao.bancotalentosapoio.action.FiltroConsultaAction" input="/tipoFiltroConsultaPrepararVisualizacao.do">
+<forward name="sucesso" path="visao.bancotalentosapoio.filtroconsulta"/>
+</action>
+<action path="/filtroConsultaUsuarioEfetuarExclusao" type="br.gov.camara.visao.bancotalentosapoio.action.FiltroConsultaUsuarioAction" input="/exclusaoFiltroConsultaUsuarioPrepararExclusao.do">
+<forward name="sucesso" path="/filtroConsultaUsuarioPrepararVisualizacao.do"/>
+</action>
+<action path="/filtroConsultaUsuarioPrepararVisualizacao" type="br.gov.camara.visao.bancotalentosapoio.action.FiltroConsultaUsuarioAction" input="/filtroConsultaPrepararVisualizacao.do">
+<forward name="sucesso" path="visao.bancotalentosapoio.filtroconsultausuario"/>
+</action>
+<action path="/ordenacaoCategoriaAtributoTalentoPrepararVisualizacao" type="br.gov.camara.visao.bancotalentosapoio.action.CategoriaAtributoTalentoAction" input="visao.bancotalentosapoio.categoriaatributotalento" name="ordenacaoCategoriaAtributoTalento" scope="request" validate="false" parameter="OrdenacaoCategoriaAtributoTalento">
+<forward name="sucesso" path="visao.bancotalentosapoio.ordenacaocategoriaatributotalento"/>
+</action>
+<action path="/ordenacaoCategoriaTalentoPrepararVisualizacao" type="br.gov.camara.visao.bancotalentosapoio.action.CategoriaTalentoAction" input="visao.bancotalentosapoio.categoriatalento" name="ordenacaoCategoriaTalento" scope="request" validate="false" parameter="OrdenacaoCategoriaTalento">
+<forward name="sucesso" path="visao.bancotalentosapoio.ordenacaocategoriatalento"/>
+</action>
+<action path="/tipoFiltroConsultaEfetuarAlteracao" type="br.gov.camara.visao.bancotalentosapoio.action.TipoFiltroConsultaAction" input="/detalheTipoFiltroConsultaPrepararAlteracao.do" name="detalheTipoFiltroConsulta" scope="request" validate="true" parameter="DetalheTipoFiltroConsulta">
+<forward name="sucesso" path="/tipoFiltroConsultaPrepararVisualizacao.do"/>
+</action>
+<action path="/tipoFiltroConsultaEfetuarExclusao" type="br.gov.camara.visao.bancotalentosapoio.action.TipoFiltroConsultaAction" input="/exclusaoTipoFiltroConsultaPrepararExclusao.do">
+<forward name="sucesso" path="/tipoFiltroConsultaPrepararVisualizacao.do"/>
+</action>
+<action path="/tipoFiltroConsultaPrepararVisualizacao" type="br.gov.camara.visao.bancotalentosapoio.action.TipoFiltroConsultaAction" input="visao.bancotalentosapoio.indexbancotalentosapoio">
+<forward name="sucesso" path="visao.bancotalentosapoio.tipofiltroconsulta"/>
+</action>
+</action-mappings>
+<controller processorClass="br.gov.camara.util.actionplugin.ActionPlugInTilesRequestProcessor"/>
+<message-resources parameter="resources.BancoTalentosApoio"/>
+<message-resources parameter="resources.Comum" key="comum"/>
+<plug-in className="br.gov.camara.util.actionplugin.ActionPlugInPlugIn">
+<set-property property="configFile" value="/WEB-INF/config/projeto/action-plug-in/action-plug-in-config.xml"/>
+<set-property property="configDTD" value="/WEB-INF/config/Comum/action-plug-in/action-plug-in-config_1_0.dtd"/>
+</plug-in>
+<plug-in className="org.apache.struts.tiles.TilesPlugin">
+<set-property property="definitions-parser-validate" value="true"/>
+<set-property property="moduleAware" value="true"/>
+<set-property property="definitions-config" value="/WEB-INF/config/Comum/tiles-defs/Comum-tiles.xml, /WEB-INF/config/BancoTalentosApoio/tiles-defs/BancoTalentosApoio-tiles.xml"/>
+</plug-in>
+<plug-in className="br.gov.camara.util.strutsmenu.MenuPlugInCD">
+<set-property property="menuConfig" value="/WEB-INF/config/BancoTalentosApoio/menu-config/BancoTalentosApoio-menu.xml"/>
+</plug-in>
+<plug-in className="br.gov.camara.util.locale.LocalePlugIn">
+<set-property property="linguagem" value="pt"/>
+<set-property property="pais" value="BR"/>
+</plug-in>
+<plug-in className="sigesp.comum.util.hibernate.HibernatePlugIn"/>
+</struts-config>
+
